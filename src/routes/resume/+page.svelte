@@ -24,7 +24,7 @@
   <div class='max-w-[920px] mx-auto bg-base-100 shadow-lg'>
     <section class='p-profile'>
       <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
-      <div class='flex items-center gap-3 mt-1'>
+      <div class='flex flex-wrap items-center gap-y-2 gap-3 mt-1'>
         <Badge type='gender'>
           {new Date().getFullYear() - new Date(Profile.birthdate).getFullYear()} 岁
         </Badge>
@@ -66,7 +66,7 @@
       </div>
     </section>
 
-    <section class='bg-base-200/70'>
+    <section class='bg-base-200/70 pt-4'>
       <div class='p-profile flex items-center justify-between'>
         <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
