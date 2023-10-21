@@ -3,8 +3,8 @@
 
   const ProjectList:ProjectList[] = [
     {
-      title: 'PA GPT - 批量推文自动化生成工具',
-      keywords: ['AIGC', '外包', '营销推广', '爬虫', '自动化', 'Python', 'Node.js', 'Svelte'],
+      title: 'PA GPT - 推文自动化生成工具',
+      keywords: ['AIGC', '外包', '客户端', '营销推广', '爬虫', '自动化', 'Python', 'Node.js', 'Svelte'],
       created_at: '2023-10-07',
       finished_at: '2023-10-20',
       contents: [
@@ -16,7 +16,7 @@
     },
     {
       title: '工业物联网模块化上位机',
-      keywords: ['大前端', '物联网', 'Node.js', 'Svelte'],
+      keywords: ['大前端', '客户端', '物联网', 'Node.js', 'Svelte'],
       created_at: '2023-06-20',
       updated_at: '2023-08-01',
       contents: [
@@ -29,7 +29,7 @@
     {
       title: 'MetaUIT - 元优联：全国科技爱好者共同的社区',
       icon: '/icons/metauit.jpg',
-      keywords: ['SaaS', 'API', '平台', '支付', 'Node.js', 'Svelte', 'PHP', 'Webman', 'Redis', 'MySQL', 'TimescaleDB'],
+      keywords: ['SaaS', 'API', '平台', '支付', 'Node.js', 'Svelte', 'PHP', 'Webman', 'Redis', 'MySQL', 'TimescaleDB', 'JWT'],
       created_at: '2023-04-12',
       updated_at: '2023-08-04',
       contents: [
@@ -44,8 +44,8 @@
       }
     },
     {
-      title: '大型语言模型聚合平台',
-      keywords: ['AIGC', 'SaaS', 'API', 'Serverless', 'Node.js', 'Svelte'],
+      title: '大型语言模型聚合 API 服务',
+      keywords: ['AIGC', 'SaaS', 'API', 'Serverless', 'Node.js', 'Svelte', 'WebSocket'],
       created_at: '2023-02-13',
       updated_at: '2023-09-17',
       contents: [
@@ -56,13 +56,13 @@
     },
     {
       title: 'GPEG 九型人格测试系统',
-      keywords: ['心理测试', '产品', 'JavaScript', 'PHP', 'Redis', 'MySQL'],
+      keywords: ['心理测试', '产品', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2022-04-05',
       finished_at: '2022-04-19',
       contents: [
         {key: '背景', value: 'MBTI 的爆火让我更加相信在人类历史发展长河中，我们已渐渐开始从物质文明转为精神文明建设。'},
         {key: '目标', value: '利用九型人格理论开发在线测试及分析评估系统，帮助用户了解内在自我，促进心理成长和自我发展。'},
-        {key: '结果', value: '2023 年中旬近 30 天内测试人数超 3.8 万人，交易额达 2.7 万元。在 413 位用户反馈中，评分高达 98%。'},
+        {key: '结果', value: '2023 年中旬近 30 天内测试人数超 2.8 万人，交易额达 1.7 万元。在 413 位用户反馈中，评分高达 98%。'},
       ]
     },
     {
@@ -75,6 +75,32 @@
         {key: '背景', value: '传统代发流程中，商家在 A 平台寻找低价货源，在 B 平台以高价挂售。<br/>但对于复杂的商品信息，每个商品平均耗时长达半小时，费时费力。'},
         {key: '目标', value: '多平台多商铺商品信息采集，一键批量上货，实时库存维护。'},
         {key: '结果', value: '甲方团队通过该软件，将先前每件商品 30 分钟的工作时长缩减至 2 分钟。<br/>次月商户号累计销售额达 43 万，相较使用前提升了 1075%。'},
+      ]
+    },
+    {
+      title: '广西农民工创业联盟',
+      icon: '/icons/nmgcy.jpg',
+      keywords: ['平台', '外包', '小程序', 'JS', 'Java', 'SpringBoot', 'Redis', 'MySQL', 'JWT'],
+      created_at: '2021-07-11',
+      finished_at: '2021-09-01',
+      contents: [
+        {key: '目标', value: '邀约农民工申报创业项目，指导专家入驻平台提供技术支持、素质培训等能力提升帮扶，提高创业成功率。'},
+        {key: '行动', value: '独立负责系统程序开发，基于 gQuery 框架开发网站，Java SpringBoot 后端以及原生小程序。<br/>基于 WebSocket 自主实现 IM 实时聊天模块，站内外智能通知确保消息被及时查阅。'},
+      ],
+      owned_by: {
+        company: '广西迈特优科技发展有限公司',
+        role: '首席技术官',
+        created_at: '2021-05'
+      }
+    },
+    {
+      title: 'Chiau | ChiauFarm - 多功能可视化挖矿程序',
+      icon: '/icons/chiau.jpg',
+      keywords: ['Crypto', '客户端', 'Node.js', 'NW.js', 'Redis'],
+      created_at: '2021-05-13',
+      finished_at: '2021-06-08',
+      contents: [
+        {key: '结果', value: '作为首个公开的多功能可视化自动耕种挖矿客户端，已实现多账户隔离、无服务器、代耕系统、操作自动化，并逆向实现稳定可靠的进度条算法，发布后一周内下载量达 3000 余次。'},
       ]
     },
     {
@@ -142,7 +168,7 @@
       </div>
     </div>
   </div>
-  <ul class='px-profile py-3'>
+  <ul class='px-profile py-3 leading-relaxed'>
     {#each item.contents as content(content.key)}
     <li class='flex'>
       <div class='font-semibold w-16 shrink-0'>{content.key}：</div>

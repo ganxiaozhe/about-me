@@ -10,7 +10,7 @@
     {
       name: '***',
       location: '',
-      role: '由于保密需要该经历不可见',
+      role: '保密需要该经历不可见',
       created_at: '2020-05',
       finished_at: '2021-05'
     },
@@ -33,10 +33,10 @@
 {#each EmploymentList as item(item.name)}
 <div class='px-profile'>
   <div class='flex items-center justify-between'>
-    <h2 class='text-lg font-semibold'>{item.name}</h2>
+    <h2 class='font-semibold sm:text-lg'>{item.name}</h2>
     <p>{item.location}</p>
   </div>
-  <div class='flex items-center justify-between'>
+  <div class='flex items-center justify-between text-sm'>
     {#if item.role}
     <i>{item.role}</i>
     {/if}
