@@ -1,0 +1,97 @@
+<script lang='ts'>
+	import Badge from "$lib/components/Badge.svelte";
+	import EmploymentListView from "$lib/modules/EmploymentListView.svelte";
+	import ProjectListView from "$lib/modules/ProjectListView.svelte";
+	import Seo from "$lib/modules/SEO.svelte";
+
+  const Profile:Profile = {
+    fullname: '具诚人',
+    fullname_en: 'JU Chengren',
+    nickname: '甘小蔗',
+    nickname_en: 'Sugarcane',
+    gender: '男',
+    birthdate: '2002-02-14',
+    email: 'hi@gxzv.com',
+    phone: '18883000080',
+    website: 'https://gxzv.com'
+  };
+</script>
+
+<Seo title='我的简历' />
+
+
+<div class='grid-pattern min-h-screen py-8 sm:py-24'>
+  <div class='max-w-[920px] mx-auto bg-base-100 shadow-lg'>
+    <section class='p-profile'>
+      <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
+      <div class='flex items-center gap-3 mt-1'>
+        <Badge type='gender'>
+          {new Date().getFullYear() - new Date(Profile.birthdate).getFullYear()} 岁
+        </Badge>
+        <div class='tooltip tooltip-bottom' data-tip='个人网站'>
+          <Badge type='website' iconClass='text-green-500' rightClass='bg-green-700'>
+            <a href={Profile.website}>{Profile.website.replace(/^https?:\/\//, '')}</a>
+          </Badge>
+        </div>
+        <div class='tooltip tooltip-bottom' data-tip='电子邮箱'>
+          <Badge type='mail' iconClass='text-green-500' rightClass='bg-green-700'><a href='mailto:{Profile.email}'>{Profile.email}</a></Badge>
+        </div>
+        <div class='tooltip tooltip-bottom' data-tip='手机号码'>
+          <Badge type='phone' iconClass='text-green-500' rightClass='bg-green-700'><a href='sms:{Profile.phone}'>+86 {Profile.phone}</a></Badge>
+        </div>
+      </div>
+
+      <div class='leading-relaxed mt-4'>
+        <p>一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发运营经验。</p>
+        <p>致力于多样化，包容开放行为，拥抱伤害和困顿。</p>
+      </div>
+    </section>
+
+    <section class='bg-base-200/70 leading-relaxed'>
+      <div class='p-profile flex items-center justify-between'>
+        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M3 21h18"></path>
+          <path d="M19 21v-4"></path>
+          <path d="M19 17a2 2 0 0 0 2 -2v-2a2 2 0 1 0 -4 0v2a2 2 0 0 0 2 2z"></path>
+          <path d="M14 21v-14a3 3 0 0 0 -3 -3h-4a3 3 0 0 0 -3 3v14"></path>
+          <path d="M9 17v4"></path>
+          <path d="M8 13h2"></path>
+          <path d="M8 9h2"></path>
+       </svg>工作经历</h2>
+      </div>
+
+      <div class='flex flex-col gap-5'>
+        <EmploymentListView />
+      </div>
+    </section>
+
+    <section class='bg-base-200/70 leading-relaxed'>
+      <div class='p-profile flex items-center justify-between'>
+        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 21h14"></path>
+          <path d="M6 18h2"></path>
+          <path d="M7 18v3"></path>
+          <path d="M9 11l3 3l6 -6l-3 -3z"></path>
+          <path d="M10.5 12.5l-1.5 1.5"></path>
+          <path d="M17 3l3 3"></path>
+          <path d="M12 21a6 6 0 0 0 3.715 -10.712"></path>
+       </svg>个人项目</h2>
+      </div>
+
+      <div class='flex flex-col gap-5'>
+        <ProjectListView />
+      </div>
+
+      <div class='py-4'></div>
+    </section>
+
+    <section>
+      <div class='px-profile py-6'>
+        <p class='opacity-80'>🌱 World is powered by solitude.</p>
+        <p class='opacity-80'>🍀 相信内向者的力量</p>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<script lang='ts'>
+  const EmploymentList = [
+    {
+      name: '荣昌区甘小蔗网络技术工作室',
+      location: '重庆, 中国',
+      role: '法人, 唯一员工',
+      created_at: '2020-03-16',
+      finished_at: '2022-03-03'
+    },
+    {
+      name: '***',
+      location: '',
+      role: '由于保密需要该经历不可见',
+      created_at: '2020-05',
+      finished_at: '2021-05'
+    },
+    {
+      name: '广西迈特优科技发展有限公司',
+      location: '远程工作',
+      role: '首席技术官',
+      created_at: '2021-05'
+    },
+    {
+      name: '重庆浮木科技有限公司',
+      location: '重庆, 中国',
+      role: '法人, 唯一员工',
+      created_at: '2021-12-14'
+    }
+  ];
+</script>
+
+
+{#each EmploymentList as item(item.name)}
+<div class='px-profile'>
+  <div class='flex items-center justify-between'>
+    <h2 class='text-lg font-semibold'>{item.name}</h2>
+    <p>{item.location}</p>
+  </div>
+  <div class='flex items-center justify-between'>
+    {#if item.role}
+    <i>{item.role}</i>
+    {/if}
+    {#if item.created_at||item.finished_at}
+    <i>{item.created_at} / {item.finished_at||'至今'}</i>
+    {/if}
+  </div>
+</div>
+{/each}

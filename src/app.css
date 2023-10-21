@@ -1,0 +1,80 @@
+.container {
+	padding: 1.5rem;
+}
+.\!container {
+	padding: 1.5rem !important;
+}
+
+
+.border {
+	border-width: 1px;
+	border-style: solid;
+	border-color: hsl(var(--b3));
+}
+[class*='border-']{
+	border-color: hsl(var(--b3));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 修改 daisyui */
+:root {
+	/* 降低颜色明度 */
+	--er: 0 80% 40%;
+}
+/* 浅色主题背景色 */
+:root[data-theme='light'] {
+	background-color: hsl(var(--b2));
+}
+
+
+@media (min-width: 1280px) {
+	.container {
+		max-width: 80rem;
+	}
+	.\!container {
+		max-width: 80rem !important;
+	}
+}
+@media (max-width: 768px){
+	.container {max-width: 100%;}
+}
+
+
+.text-shadow {
+	text-shadow: 1px 1px 2px hsl(var(--b1));
+}
+
+.text-app {color: #f6d200;}
+.text-app-content {color: #fff;}
+.bg-app {background-color: #b68000;}
+.border-app {border-color: #f6d200;}
+
+.h-body {
+	height: calc(100vh - 4rem);
+}
+.min-h-body {
+	min-height: calc(100vh - 4rem);
+}
+@media (min-width: 768px) {
+	.md\:min-h-body {
+		min-height: calc(100vh - 4rem);
+	}
+}
+
+.grid-pattern {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+	background-size: 40px 40px, 40px 40px;
+	background-position: -1px -1px, -1px -1px;
+}
+
+
+/* 简历 */
+.p-profile {padding: 2.5rem 3rem;}
+.px-profile {padding-left: 3rem;padding-right: 3rem;}
+@media (max-width: 768px){
+  .p-profile {padding: 1.5rem 2rem;}
+  .px-profile {padding-left: 2rem;padding-right: 2rem;}
+}
