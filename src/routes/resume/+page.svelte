@@ -1,8 +1,10 @@
 <script lang='ts'>
+	import { dev } from "$app/environment";
 	import Badge from "$lib/components/Badge.svelte";
 	import EmploymentListView from "$lib/modules/EmploymentListView.svelte";
 	import ProjectListView from "$lib/modules/ProjectListView.svelte";
 	import Seo from "$lib/modules/SEO.svelte";
+	import SkillListView from "$lib/modules/SkillListView.svelte";
 
   const Profile:Profile = {
     fullname: '具诚人',
@@ -12,7 +14,7 @@
     gender: '男',
     birthdate: '2002-02-14',
     email: 'hi@gxzv.com',
-    phone: '18423442002',
+    phone: dev ? '18883000080' : '×Ï<ßM4ÓÍ',
     website: 'https://gxzv.com'
   };
 </script>
@@ -28,17 +30,21 @@
         <Badge type='gender'>
           {new Date().getFullYear() - new Date(Profile.birthdate).getFullYear()} 岁
         </Badge>
+        {#if Profile.website}
         <div class='tooltip tooltip-bottom' data-tip='个人网站'>
           <Badge type='website' iconClass='text-green-500' rightClass='bg-green-700'>
             <a href={Profile.website}>{Profile.website.replace(/^https?:\/\//, '')}</a>
           </Badge>
         </div>
+        {/if}
         <div class='tooltip tooltip-bottom' data-tip='电子邮箱'>
           <Badge type='mail' iconClass='text-green-500' rightClass='bg-green-700'><a href='mailto:{Profile.email}'>{Profile.email}</a></Badge>
         </div>
-        <div class='tooltip tooltip-bottom' data-tip='隐私小号'>
-          <Badge type='phone' iconClass='text-green-500' rightClass='bg-green-700'><a href='sms:{Profile.phone}'>+86 {Profile.phone}</a></Badge>
+        {#if Profile.phone}
+        <div class='tooltip tooltip-bottom' data-tip='手机号码'>
+          <Badge type='phone' iconClass='text-green-500' rightClass='bg-green-700'><a href={isNaN(Number(Profile.phone)) ? null : `sms:${Profile.phone}`}>+86 {Profile.phone}</a></Badge>
         </div>
+        {/if}
       </div>
 
       <div class='leading-relaxed mt-4'>
@@ -84,7 +90,26 @@
         <ProjectListView />
       </div>
 
-      <div class='py-4'></div>
+    </section>
+
+    <section class='bg-base-200/70 pt-4'>
+      <div class='p-profile flex items-center justify-between'>
+        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
+          <path d="M14.5 5.5l4 4"></path>
+          <path d="M12 8l-5 -5l-4 4l5 5"></path>
+          <path d="M7 8l-1.5 1.5"></path>
+          <path d="M16 12l5 5l-4 4l-5 -5"></path>
+          <path d="M16 17l-1.5 1.5"></path>
+        </svg>个人技能</h2>
+      </div>
+
+      <div class='flex flex-col gap-5'>
+        <SkillListView />
+      </div>
+
+      <div class='py-6'></div>
     </section>
 
     <section>

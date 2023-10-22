@@ -6,8 +6,8 @@ interface Profile {
   gender: string;
   birthdate: string;
   email: string;
-  phone: string;
-  website: string;
+  phone?: string;
+  website?: string;
 }
 
 
@@ -30,3 +30,12 @@ interface ProjectList {
     finished_at?: string;
   };
 }
+
+
+interface SkillList {
+  name: string;
+  items: {
+    key: string;
+    value: string;
+  }[];
+}[]
