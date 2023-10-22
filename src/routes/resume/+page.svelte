@@ -47,7 +47,7 @@
         {/if}
       </div>
 
-      <div class='leading-relaxed mt-4'>
+      <div class='leading-relaxed mt-4 text-sm xs:text-base'>
         <p>一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发运营经验。</p>
         <p>致力于多样化，包容开放行为，拥抱伤害和困顿。</p>
       </div>

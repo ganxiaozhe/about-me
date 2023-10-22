@@ -211,7 +211,7 @@
 <section class='item group pb-3 {item.class||''}'>
   {#if item.owned_by}
   <div class="bg-green-600/10 px-profile py-2 mb-3
-  flex gap-4">
+  flex gap-4 text-sm sm:text-base">
     <div class='w-12 shrink-0 flex justify-center'>
       <svg xmlns="http://www.w3.org/2000/svg" class="relative w-6 h-6 
       group-hover:animate-bounce group-hover:top-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -255,7 +255,7 @@
     </div>
   </div>
   {#if item.contents}
-  <ul class='px-profile pt-3 leading-relaxed'>
+  <ul class='px-profile pt-3 leading-relaxed text-sm xs:text-base'>
     {#each item.contents as content(content.key)}
     <li class='flex'>
       <div class='font-semibold w-16 shrink-0'>{content.key}：</div>
