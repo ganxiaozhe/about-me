@@ -3,7 +3,7 @@
     {
       name: '荣昌区甘小蔗网络技术工作室',
       location: '重庆, 中国',
-      role: '法人, 唯一员工',
+      role: 'CEO / CTO',
       created_at: '2020-03-16',
       finished_at: '2022-03-03'
     },
@@ -17,13 +17,13 @@
     {
       name: '广西迈特优科技发展有限公司',
       location: '远程工作',
-      role: '首席技术官',
+      role: 'CTO',
       created_at: '2021-05'
     },
     {
       name: '重庆浮木科技有限公司',
       location: '重庆, 中国',
-      role: '法人, 唯一员工',
+      role: 'CEO / CTO',
       created_at: '2021-12-14'
     }
   ];

@@ -66,6 +66,17 @@
       ]
     },
     {
+      title: '深圳市星凯科技有限公司官网',
+      icon: '/icons/5axismfg.jpg',
+      keywords: ['企业官网', '外包', '重工制造', 'CMS', 'H5', 'JS', 'PHP', 'Redis', 'MySQL', 'JWT'],
+      created_at: '2022-03-23',
+      finished_at: '2022-04-20',
+      contents: [
+        {key: '背景', value: '其公司官网面临到期，且界面与功能老旧，现需开发新网站并私有部署。'},
+        {key: '行动', value: '该项目前后端均使用自研框架 gQuery 进行开发，成功将开发时间从 45 天缩短至 29 天。<br/>由于旧站点到期，内容无法正常迁移，我通过 Node.js 快速实现爬虫程序，将数据完美迁移至新站点。'}
+      ]
+    },
+    {
       title: 'NONOERP: 电商 ERP 辅助软件',
       icon: '/icons/nonoerp.jpg',
       keywords: ['电商', '外包', '爬虫', '自动化', 'Node.js', 'NW.js'],
@@ -94,6 +105,17 @@
       }
     },
     {
+      title: 'Astrokitties: BSC-BNB 反射币',
+      icon: '/icons/astrokitty.jpg',
+      keywords: ['Crypto', 'Web3', '区块链', 'Node.js', 'Redis'],
+      created_at: '2021-07-03',
+      finished_at: '2021-09-10',
+      contents: [
+        {key: '角色', value: '任 Astrokitties (AK Token) 大中华区管理员，负责布道及官网开发。'},
+        {key: '背景', value: 'AK Token 是币安智能链 (BSC) 上自动 BNB 收益合约的首批先行者，在购买代币并持有后，每 30 分钟钱包中就会自动收到 BNB 奖励，无需任何操作。'},
+      ]
+    },
+    {
       title: 'Chiau | ChiauFarm - 多功能可视化挖矿程序',
       icon: '/icons/chiau.jpg',
       keywords: ['Crypto', '客户端', 'Node.js', 'NW.js', 'Redis'],
@@ -101,6 +123,70 @@
       finished_at: '2021-06-08',
       contents: [
         {key: '结果', value: '作为首个公开的多功能可视化自动耕种挖矿客户端，已实现多账户隔离、无服务器、代耕系统、操作自动化，并逆向实现稳定可靠的进度条算法，发布后一周内下载量达 3000 余次。'},
+      ]
+    },
+    {
+      title: '英雄攀枝花 阳光康养地',
+      icon: '/icons/panzhihua.jpg',
+      keywords: ['文创', '比赛', 'H5', 'JS'],
+      created_at: '2020-11-25',
+      finished_at: '2020-12-21',
+      contents: [
+        {key: '背景', value: '由中共攀枝花市人民政府主办，文创设计大赛项目。'},
+        {key: '行动', value: '创建文旅专题网站，使用自研 gQuery 框架开发，H5 自适应。'}
+      ]
+    },
+    {
+      title: '阿具食品有限公司官网',
+      icon: '/icons/ajufood.jpg',
+      keywords: ['企业官网', '食品', '消费品', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
+      created_at: '2020-10-24',
+      updated_at: '2022-05-31',
+    },
+    {
+      title: 'gQuery 框架',
+      icon: '/icons/gquery.jpg',
+      keywords: ['前端框架', '开源', 'JS', 'CSS', 'UI/UX', 'PHP'],
+      created_at: '2020-07-05',
+      finished_at: '2022-07-14',
+      contents: [
+        {key: '背景', value: '希望能高效构建强大美观的系统项目，封装通用函数库和 UI 组件加速前端开发。'},
+        {key: '目标', value: '前端函数库参考 jQuery 开发，与 CSS 框架一同基于 MIT 开源。后端框架基于 PSR 参考 ThinkPHP 开发。'},
+        {key: '成果', value: '在中小型项目中，gQuery 提升了 49% 的开发效率，并于 Gitee 成为推荐项目。<br/>基于 gQuery 开发了数十余种复杂组件，包括 MD 编辑器、浏览器菜单、滚动视差、灯箱等。'}
+      ]
+    },
+    {
+      title: '元魔幻界: Minecraft 群组 & 服务平台',
+      icon: '/icons/metamo.jpg',
+      keywords: ['游戏运营商', '社区平台', '在线工具', '内容', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
+      created_at: '2020-03-10',
+      updated_at: '2022-10-24',
+      contents: [
+        {key: '背景', value: 'Minecraft 群祖服运营商，提供多人游戏、在线社区、工具、原创内容产出等服务。'},
+        {key: '行动', value: `负责网站与游戏服务器的开发，功能规划及业务方向。
+        <br/>在中后期开发中将前端函数库由 jQuery 更换为 gQuery，缩减代码量达 37%，有效提高开发效率。
+        <br/>网站前端使用 gQuery 框架，后端使用 gQueryPHP 框架，自主实现前后端工程化。
+        <br/>利用社工、安全运维、渗透测试等知识，隐藏有效信息，在控制层防止穷举爆破、恶意文件上传，通过 SQLMap 工具查缺、PHP PDO 有效防止 SQL 注入，并及时处理 XSS 漏洞。`},
+        {key: '成果', value: '累计注册用户人数达 34,000+，在国内早期玩家群体中拥有较高影响力。<br/>在线工具总计使用量已达 1,000W+，用户体验颇受好评。'}
+      ]
+    },
+    {
+      title: 'ThePieShed 在线订餐系统',
+      keywords: ['实体餐饮', '外包', 'H5', 'JS', 'MySQL'],
+      created_at: '2019-08-28',
+      finished_at: '🤐',
+      contents: [
+        {key: '背景', value: '海外商家需要一个简单的自动化订餐网站，客户可通过 PC、iPad、手机端进行点餐。点餐后将账单发送至客户邮箱，付款后再由餐厅制作，客户按照约定时间取餐。'},
+      ]
+    },
+    {
+      title: 'Greeper: 亚马逊智能爬虫',
+      keywords: ['工具', '外包', '爬虫', 'Node.js'],
+      created_at: '🤐',
+      finished_at: '🤐',
+      contents: [
+        {key: '目标', value: '针对亚马逊商家后台的爬虫程序，可自动抓取后台检索中所有关联商品，并聚合输出至 Excel。'},
+        {key: '行动', value: '程序通过 Node.js 开发，依靠 Nightmare 模拟用户操作以规避严格的反爬策略。'}
       ]
     },
     {
@@ -122,7 +208,7 @@
 
 
 {#each ProjectList as item(item.title)}
-<section class='item group {item.class||''}'>
+<section class='item group pb-3 {item.class||''}'>
   {#if item.owned_by}
   <div class="bg-green-600/10 px-profile py-2 mb-3
   flex gap-4">
@@ -168,7 +254,8 @@
       </div>
     </div>
   </div>
-  <ul class='px-profile py-3 leading-relaxed'>
+  {#if item.contents}
+  <ul class='px-profile pt-3 leading-relaxed'>
     {#each item.contents as content(content.key)}
     <li class='flex'>
       <div class='font-semibold w-16 shrink-0'>{content.key}：</div>
@@ -176,5 +263,6 @@
     </li>
     {/each}
   </ul>
+  {/if}
 </section>
 {/each}

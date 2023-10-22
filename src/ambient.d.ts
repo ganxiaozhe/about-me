@@ -19,7 +19,7 @@ interface ProjectList {
   created_at?: string;
   updated_at?: string;
   finished_at?: string;
-  contents: {
+  contents?: {
     key: string;
     value: string;
   }[];

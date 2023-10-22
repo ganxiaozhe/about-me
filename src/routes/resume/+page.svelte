@@ -12,7 +12,7 @@
     gender: '男',
     birthdate: '2002-02-14',
     email: 'hi@gxzv.com',
-    phone: '18883000080',
+    phone: '18423442002',
     website: 'https://gxzv.com'
   };
 </script>
@@ -36,7 +36,7 @@
         <div class='tooltip tooltip-bottom' data-tip='电子邮箱'>
           <Badge type='mail' iconClass='text-green-500' rightClass='bg-green-700'><a href='mailto:{Profile.email}'>{Profile.email}</a></Badge>
         </div>
-        <div class='tooltip tooltip-bottom' data-tip='手机号码'>
+        <div class='tooltip tooltip-bottom' data-tip='隐私小号'>
           <Badge type='phone' iconClass='text-green-500' rightClass='bg-green-700'><a href='sms:{Profile.phone}'>+86 {Profile.phone}</a></Badge>
         </div>
       </div>
@@ -89,7 +89,7 @@
 
     <section>
       <div class='px-profile py-6 text-sm sm:text-base'>
-        <p class='opacity-80'>🌱 World is powered by solitude.</p>
+        <p class='opacity-80'>🌱 World is powered by solitude</p>
         <p class='opacity-80'>🍀 相信内向者的力量</p>
       </div>
     </section>
