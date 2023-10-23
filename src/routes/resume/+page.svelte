@@ -1,10 +1,11 @@
 <script lang='ts'>
-	import { dev } from "$app/environment";
+	import { browser, dev } from "$app/environment";
 	import Badge from "$lib/components/Badge.svelte";
 	import EmploymentListView from "$lib/modules/EmploymentListView.svelte";
 	import ProjectListView from "$lib/modules/ProjectListView.svelte";
 	import Seo from "$lib/modules/SEO.svelte";
 	import SkillListView from "$lib/modules/SkillListView.svelte";
+
 
   const Profile:Profile = {
     fullname: '具诚人',
@@ -15,15 +16,109 @@
     birthdate: '2002-02-14',
     email: 'hi@gxzv.com',
     phone: dev ? '18883000080' : '×Ï<ßM4ÓÍ',
-    website: 'https://gxzv.com'
+    website: 'https://gxzv.com',
+    intros: [
+      '一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发运营经验。',
+      '致力于多样化，包容开放行为，拥抱伤害和困顿。'
+    ],
   };
+
+  const PI = {
+    mode: 'web',
+    shareTip: '分享',
+    shareTimer: 0,
+  };
+  (()=>{
+    if(!browser){return;}
+    const url = new URL(window.location.href);
+    if(url.searchParams.has('pdf')){
+      PI.mode = 'pdf';
+    }
+  })();
+
+
+  // 分享简历链接
+  function share(){
+    const text = `这家伙的简历还挺有意思，分享给你：\n🔗 ${window.location.origin+window.location.pathname}`;
+    navigator.clipboard.writeText(text).then(()=>{
+			PI.shareTip = '内容已复制至剪贴板';
+		}, function(err){
+      PI.shareTip = '内容复制失败';
+		});
+
+    clearTimeout(PI.shareTimer);
+    PI.shareTimer = setTimeout(()=>{PI.shareTip = '复制';}, 1500);
+  }
 </script>
 
 <Seo title='我的简历' />
 
+{#if PI.mode==='web'}
+<ul class="menu menu-horizontal bg-base-100 rounded-lg shadow 
+fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
+  <li>
+    <a href='/' class="tooltip sm:tooltip-bottom" data-tip="主页">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+      </svg>
+    </a>
+  </li>
+  <li>
+    <a on:click={()=>{
+      PI.mode = 'pdf';
+    }} href={null} class="tooltip sm:tooltip-bottom" data-tip="PDF 模式">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
+        <path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"></path>
+        <path d="M17 18h2"></path>
+        <path d="M20 15h-3v6"></path>
+        <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z"></path>
+      </svg>
+    </a>
+  </li>
+  <li>
+    <a on:click={share} href={null} class="tooltip sm:tooltip-bottom" data-tip={PI.shareTip}>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+        <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+        <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+        <path d="M8.7 10.7l6.6 -3.4"></path>
+        <path d="M8.7 13.3l6.6 3.4"></path>
+      </svg>
+    </a>
+  </li>
+</ul>
+{/if}
 
-<div class='grid-pattern min-h-screen py-8 sm:py-24'>
-  <div class='max-w-[920px] mx-auto bg-base-100 shadow-lg'>
+
+<div id='resumeStage' class='grid-pattern min-h-screen py-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
+  <div class='max-w-[920px] relative mx-auto bg-base-100 shadow-lg' class:max-w-none={PI.mode==='pdf'}>
+    <div class='absolute top-0 right-0'>
+      {#if PI.mode==='pdf'}
+      <button on:click={()=>{
+        PI.mode = 'web';
+      }} class='tooltip tooltip-left inline-flex btn btn-square' data-tip='WEB 模式'>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+          <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
+          <path d="M2 21v-6"></path>
+          <path d="M5 15v6"></path>
+          <path d="M2 18h3"></path>
+          <path d="M20 15v6h2"></path>
+          <path d="M13 21v-6l2 3l2 -3v6"></path>
+          <path d="M7.5 15h3"></path>
+          <path d="M9 15v6"></path>
+        </svg>
+      </button>
+      {/if}
+    </div>
     <section class='p-profile'>
       <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
       <div class='flex flex-wrap items-center gap-y-2 gap-3 mt-1'>
@@ -48,8 +143,9 @@
       </div>
 
       <div class='leading-relaxed mt-4 text-sm xs:text-base'>
-        <p>一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发运营经验。</p>
-        <p>致力于多样化，包容开放行为，拥抱伤害和困顿。</p>
+        {#each Profile.intros as intro}
+        <p class='inline sm:block'>{@html intro}</p>
+        {/each}
       </div>
     </section>
 

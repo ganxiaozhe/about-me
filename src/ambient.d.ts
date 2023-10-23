@@ -8,6 +8,17 @@ interface Profile {
   email: string;
   phone?: string;
   website?: string;
+  intros: string[];
+}
+
+
+interface EmploymentList {
+  name: string;
+  location: string;
+  role: string;
+  created_at: string;
+  finished_at?: string;
+  contents?: string[];
 }
 
 

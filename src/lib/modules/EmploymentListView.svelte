@@ -1,5 +1,5 @@
 <script lang='ts'>
-  const EmploymentList = [
+  const EmploymentList:EmploymentList[] = [
     {
       name: '荣昌区甘小蔗网络技术工作室',
       location: '重庆, 中国',
@@ -44,5 +44,13 @@
     <i>{item.created_at} / {item.finished_at||'至今'}</i>
     {/if}
   </div>
+  {#if item.contents}
+  <ul class='list-disc space-y-2 pl-4 mt-2 
+  text-sm opacity-90'>
+    {#each item.contents as content}
+    <li>{content}</li>
+    {/each}
+  </ul>
+  {/if}
 </div>
 {/each}
