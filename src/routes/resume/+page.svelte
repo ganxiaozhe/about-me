@@ -169,9 +169,10 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </div>
     </section>
 
+
     <section class='bg-base-200/70 pt-4'>
-      <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <ProjectListView>
+        <h2 slot='title' class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M5 21h14"></path>
           <path d="M6 18h2"></path>
@@ -180,14 +181,10 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
           <path d="M10.5 12.5l-1.5 1.5"></path>
           <path d="M17 3l3 3"></path>
           <path d="M12 21a6 6 0 0 0 3.715 -10.712"></path>
-       </svg>个人项目</h2>
-      </div>
-
-      <div class='flex flex-col gap-5'>
-        <ProjectListView />
-      </div>
-
+      </svg>个人项目</h2>
+      </ProjectListView>
     </section>
+
 
     <section class='bg-base-200/70 pt-4'>
       <div class='p-profile flex items-center justify-between'>
