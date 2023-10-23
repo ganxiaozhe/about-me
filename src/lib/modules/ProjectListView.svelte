@@ -173,7 +173,7 @@
     },
     {
       title: 'ThePieShed 在线订餐系统',
-      keywords: ['实体餐饮', '外包', '食品', 'H5', 'JS', 'MySQL'],
+      keywords: ['实体餐饮', '外包', '食品', 'H5', 'JS', 'PHP', 'MySQL'],
       created_at: '2019-08-28',
       finished_at: '🤐',
       contents: [
@@ -233,13 +233,13 @@
 
 {#if PI.filterOpened}
 <div transition:fly={{y:20}} class="fixed inset-0 
-bg-gray-800 bg-opacity-75 transition-opacity
-flex items-center justify-center z-10">
+bg-black bg-opacity-80 transition-opacity
+flex items-center justify-center z-20">
   <div class="bg-base-100 rounded-box shadow overflow-hidden">
     <div class="bg-base-200 flex items-center h-16 px-6">
       <h2 class="text-lg font-semibold">项目筛选</h2>
     </div>
-    <div class="w-[528px] max-h-[420px] overflow-auto container bg-base-100">
+    <div class="w-[528px] max-h-[430px] overflow-auto container bg-base-100">
       <div class='flex flex-wrap gap-2 select-none'>
         <input type='text' placeholder='搜索关键词' bind:value={PI.filterSearch}
         class='input input-sm mb-2 input-bordered w-full' />
