@@ -28,6 +28,7 @@
     shareTip: '分享',
     shareTimer: 0,
   };
+  // 预处理
   (()=>{
     if(!browser){return;}
     const url = new URL(window.location.href);
@@ -39,11 +40,11 @@
 
   // 分享简历链接
   function share(){
-    const text = `这家伙的简历还挺有意思，分享给你：\n🔗 ${window.location.origin+window.location.pathname}`;
+    const text = `这家伙的简历还挺有意思，分享给你：🔗 ${window.location.origin+window.location.pathname}`;
     navigator.clipboard.writeText(text).then(()=>{
 			PI.shareTip = '内容已复制至剪贴板';
 		}, function(err){
-      PI.shareTip = '内容复制失败';
+      PI.shareTip = `复制失败 - ${err.toString()}`;
 		});
 
     clearTimeout(PI.shareTimer);
@@ -97,7 +98,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
 {/if}
 
 
-<div id='resumeStage' class='grid-pattern min-h-screen py-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
+<div id='resumeStage' class='grid-pattern min-h-screen pb-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
   <div class='max-w-[920px] relative mx-auto bg-base-100 shadow-lg' class:max-w-none={PI.mode==='pdf'}>
     <div class='absolute top-0 right-0'>
       {#if PI.mode==='pdf'}
