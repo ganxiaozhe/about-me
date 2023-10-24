@@ -213,11 +213,11 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
         <SkillListView />
       </div>
 
-      <div class='py-6'></div>
+      <div class='py-6' class:lg:py-8={PI.mode==='pdf'}></div>
     </section>
 
     <section>
-      <div class='px-profile py-6 text-sm sm:text-base'>
+      <div class='px-profile py-6 text-sm sm:text-base' class:lg:py-8={PI.mode==='pdf'}>
         <p class='opacity-80'>🌱 World is powered by solitude</p>
         <p class='opacity-80'>🍀 相信内向者的力量</p>
       </div>
