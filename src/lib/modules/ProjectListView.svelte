@@ -30,7 +30,8 @@
     {
       title: 'MetaUIT - 元优联：全国科技爱好者共同的社区',
       icon: '/icons/metauit.jpg',
-      keywords: ['SaaS', 'API', '平台', '社区', '支付', '物联网', 'Node.js', 'Svelte', 'PHP', 'Webman', 'Redis', 'MySQL', 'TimescaleDB'],
+      url: 'https://metauit.com/',
+      keywords: ['SaaS', 'API', '平台', '社区', '支付', '物联网', 'Node.js', 'Svelte', 'PHP', 'Webman', 'Redis', 'MySQL'],
       created_at: '2023-04-12',
       updated_at: '2023-08-04',
       contents: [
@@ -46,6 +47,7 @@
     },
     {
       title: '大型语言模型聚合 API 服务',
+      //url: 'https://metor-api.metauit.com',
       keywords: ['AIGC', 'SaaS', 'API', 'Serverless', 'Node.js', 'Svelte'],
       created_at: '2023-02-13',
       updated_at: '2023-09-17',
@@ -57,6 +59,7 @@
     },
     {
       title: 'GPEG 九型人格测试系统',
+      url: 'https://gxzv.com/know-yourself/enneagram/',
       keywords: ['心理测试', '产品', '支付', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2022-04-05',
       finished_at: '2022-04-19',
@@ -69,6 +72,7 @@
     {
       title: '深圳市星凯科技有限公司官网',
       icon: '/icons/5axismfg.jpg',
+      url: 'https://5axismfg.cn/',
       keywords: ['企业官网', '外包', '重工制造', 'CMS', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2022-03-23',
       finished_at: '2022-04-20',
@@ -80,6 +84,7 @@
     {
       title: 'NONOERP: 电商 ERP 辅助软件',
       icon: '/icons/nonoerp.jpg',
+      url: 'https://nonoerp.com/',
       keywords: ['电商', '外包', '大前端', '爬虫', '自动化', 'Node.js', 'NW.js'],
       created_at: '2022-01-18',
       finished_at: '2022-02-13',
@@ -92,6 +97,7 @@
     {
       title: '广西农民工创业联盟',
       icon: '/icons/nmgcy.jpg',
+      url: 'https://nmg.gxrcpx.com/',
       keywords: ['平台', '外包', '小程序', 'CMS', 'JS', 'Java', 'SpringBoot', 'Redis', 'MySQL'],
       created_at: '2021-07-11',
       finished_at: '2021-09-01',
@@ -117,18 +123,20 @@
       ]
     },
     {
-      title: 'Chiau | ChiauFarm - 多功能可视化挖矿程序',
+      title: 'Chia | ChiauFarm - 多功能可视化挖矿程序',
       icon: '/icons/chiau.jpg',
+      url: 'https://chiau.net/farm/',
       keywords: ['Crypto', '大前端', '自动化', '客户端', 'Node.js', 'NW.js', 'Redis'],
       created_at: '2021-05-13',
       finished_at: '2021-06-08',
       contents: [
-        {key: '结果', value: '作为首个公开的多功能可视化自动耕种挖矿客户端，已实现多账户隔离、无服务器、代耕系统、操作自动化，并逆向实现稳定可靠的进度条算法，发布后一周内下载量达 3000 余次。'},
+        {key: '结果', value: '作为 Chia Token 首个公开的多功能可视化自动耕种挖矿客户端，已实现多账户隔离、无服务器、代耕系统、操作自动化，并逆向实现稳定可靠的进度条算法，发布后一周内下载量达 3000 余次。'},
       ]
     },
     {
       title: '英雄攀枝花 阳光康养地',
       icon: '/icons/panzhihua.jpg',
+      url: 'https://panzhihua.live/',
       keywords: ['文创', '比赛', 'H5', 'JS'],
       created_at: '2020-11-25',
       finished_at: '2020-12-21',
@@ -140,6 +148,7 @@
     {
       title: '阿具食品有限公司官网',
       icon: '/icons/ajufood.jpg',
+      url: 'https://www.ajufood.cn/',
       keywords: ['企业官网', '食品', '快消品', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2020-10-24',
       updated_at: '2022-05-31',
@@ -147,8 +156,9 @@
     {
       title: 'gQuery 框架',
       icon: '/icons/gquery.jpg',
+      url: 'https://gquery.cn/',
       keywords: ['自研框架', '开源', 'JS', 'PHP'],
-      created_at: '2020-07-05',
+      created_at: '2020-09-02',
       finished_at: '2022-07-14',
       contents: [
         {key: '背景', value: '希望能高效构建强大美观的系统项目，封装通用函数库和 UI 组件加速前端开发。'},
@@ -157,8 +167,22 @@
       ]
     },
     {
+      title: 'MCAdmin：国内垂直社区',
+      url: 'https://mcadmin.cn/',
+      keywords: ['社区', '项目管理', '在线工具', 'CMS', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
+      created_at: '2020-07-05',
+      finished_at: '2020-12-01',
+      contents: [
+        {key: '背景', value: 'Minecraft 沙盒游戏国内社区。注册用户可发起提问 (类似 StackOverflow)，发布技术论刊、游戏项目等。'},
+        {key: '行动', value: `独立完成服务器部署，MySQL 环境搭建及调优，状态监控搭建（如服务器负载及 PV、UV 等），容灾方案，后端主 PHP，前端使用 jQuery 及自研框架。
+        <br/>基于用户停留时长预测，通过 AJAX 更精准地完成数据采集，并在该环节省去 60% 网络 IO。
+        <br/>通过信息隐藏、分布式、CDN 聚合等方法低成本实现 DDOS 防护及应用安全。`},
+      ]
+    },
+    {
       title: '元魔幻界: Minecraft 群组 & 服务平台',
       icon: '/icons/metamo.jpg',
+      url: 'https://mc.metamo.cn/',
       keywords: ['游戏运营商', '社区', '在线工具', '支付', 'CMS', 'H5', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2020-03-10',
       updated_at: '2022-10-24',
@@ -239,7 +263,7 @@ flex items-center justify-center z-20">
     <div class="bg-base-200 flex items-center h-16 px-6">
       <h2 class="text-lg font-semibold">项目筛选</h2>
     </div>
-    <div class="w-[528px] max-h-[430px] overflow-auto container bg-base-100">
+    <div class="w-[520px] max-h-[430px] overflow-auto container bg-base-100">
       <div class='flex flex-wrap gap-2 select-none'>
         <input type='text' placeholder='搜索关键词' bind:value={PI.filterSearch}
         class='input input-sm mb-2 input-bordered w-full' />
@@ -324,11 +348,18 @@ flex items-center justify-center z-20">
       </div>
     </div>
     <div class='flex flex-col justify-center'>
-      <h3 class='font-semibold'>{item.title}</h3>
-      <div class='flex flex-col sm:flex-row mt-1 gap-2'>
+      <h3 class='font-semibold leading-none mt-1'>{item.title}</h3>
+      <div class='flex flex-wrap mt-2 gap-2'>
         <Badge icon='关键词' size='sm' rightClass='bg-green-700'>
           {item.keywords.join(', ')}
         </Badge>
+        {#if item.url}
+        <a href={item.url} target='_blank' class='flex'>
+          <Badge type='link' size='sm' rightClass='bg-green-700'>
+            {item.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+          </Badge>
+        </a>
+        {/if}
         {#if item.created_at}
         <Badge icon='起' size='sm'>{item.created_at}</Badge>
         {/if}
@@ -342,14 +373,14 @@ flex items-center justify-center z-20">
     </div>
   </div>
   {#if item.contents}
-  <ul class='px-profile pt-3 leading-relaxed text-sm xs:text-base'>
+  <ol class='px-profile pt-3 leading-relaxed text-sm xs:text-base'>
     {#each item.contents as content(content.key)}
     <li class='flex'>
       <div class='font-semibold w-16 shrink-0'>{content.key}：</div>
       <div>{@html content.value}</div>
     </li>
     {/each}
-  </ul>
+  </ol>
   {/if}
 </section>
 {/each}

@@ -26,6 +26,7 @@ interface ProjectList {
   class?: string;
   title: string;
   icon?: string;
+  url?: string;
   keywords: string[];
   created_at?: string;
   updated_at?: string;
