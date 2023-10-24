@@ -78,3 +78,7 @@
   .p-profile {padding: 2rem;}
   .px-profile {padding-left: 2rem;padding-right: 2rem;}
 }
+@media (min-width: 1024px) {
+	.profile-pdf .p-profile {padding: 3rem 4rem;}
+	.profile-pdf .px-profile {padding-left: 4rem;padding-right: 4rem;}
+}

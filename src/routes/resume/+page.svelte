@@ -93,7 +93,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
 {/if}
 
 
-<div id='resumeStage' class='grid-pattern min-h-screen pb-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
+<div id='resumeStage' class='profile-{PI.mode} grid-pattern min-h-screen pb-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
   <div class='max-w-[920px] relative mx-auto bg-base-100 shadow-lg' class:max-w-none={PI.mode==='pdf'}>
     <div class='absolute top-0 right-0'>
       {#if PI.mode==='pdf'}
