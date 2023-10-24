@@ -6,6 +6,8 @@
 	import Seo from "$lib/modules/SEO.svelte";
 	import SkillListView from "$lib/modules/SkillListView.svelte";
 
+	import type { PageData } from "./$types";
+	export let data:PageData;
 
   const Profile:Profile = {
     fullname: '具诚人',
@@ -24,18 +26,10 @@
   };
 
   const PI = {
-    mode: 'web',
+    mode: data.mode,
     shareTip: '分享',
     shareTimer: 0,
   };
-  // 预处理
-  (()=>{
-    if(!browser){return;}
-    const url = new URL(window.location.href);
-    if(url.searchParams.has('pdf')){
-      PI.mode = 'pdf';
-    }
-  })();
 
 
   // 分享简历链接

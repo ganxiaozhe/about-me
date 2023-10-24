@@ -62,7 +62,8 @@
       url: 'https://gxzv.com/know-yourself/enneagram/',
       keywords: ['心理测试', '产品', '支付', 'JS', 'PHP', 'Redis', 'MySQL'],
       created_at: '2022-04-05',
-      finished_at: '2022-04-19',
+      //finished_at: '2022-04-19',
+      updated_at: '2022-09-16',
       contents: [
         {key: '背景', value: 'MBTI 的爆火让我更加相信在人类历史发展长河中，我们已渐渐开始从物质文明转为精神文明建设。'},
         {key: '目标', value: '利用九型人格理论开发在线测试及分析评估系统，帮助用户了解内在自我，促进心理成长和自我发展。'},
@@ -363,11 +364,11 @@ flex items-center justify-center z-20">
         {#if item.created_at}
         <Badge icon='起' size='sm'>{item.created_at}</Badge>
         {/if}
-        {#if item.updated_at}
-        <Badge icon='最近' size='sm'>{item.updated_at}</Badge>
-        {/if}
         {#if item.finished_at}
         <Badge icon='止' size='sm'>{item.finished_at}</Badge>
+        {/if}
+        {#if item.updated_at}
+        <Badge icon='最近' size='sm'>{item.updated_at}</Badge>
         {/if}
       </div>
     </div>
