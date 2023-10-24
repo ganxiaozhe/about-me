@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import { browser, dev } from "$app/environment";
 	import Badge from "$lib/components/Badge.svelte";
+	import AbilityListView from "$lib/modules/AbilityListView.svelte";
 	import EmploymentListView from "$lib/modules/EmploymentListView.svelte";
 	import ProjectListView from "$lib/modules/ProjectListView.svelte";
 	import Seo from "$lib/modules/SEO.svelte";
@@ -178,6 +179,21 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </svg>个人项目</h2>
       </ProjectListView>
     </section>
+
+
+    <section class='bg-base-200/70 pt-4'>
+      <div class='p-profile flex items-center justify-between'>
+        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+          <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1"></path>
+          <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
+       </svg>个人能力</h2>
+      </div>
+
+      <AbilityListView />
+    </section>
+
 
 
     <section class='bg-base-200/70 pt-4'>

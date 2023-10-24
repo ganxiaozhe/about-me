@@ -17,7 +17,7 @@
     },
     {
       title: '工业物联网模块化上位机',
-      keywords: ['工控', '大前端', '客户端', '物联网', 'Node.js', 'Svelte'],
+      keywords: ['工控', '大前端', '客户端', '物联网', 'Node.js', 'Svelte', 'Flutter'],
       created_at: '2023-06-20',
       updated_at: '2023-08-01',
       contents: [
