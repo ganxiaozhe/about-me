@@ -7,6 +7,7 @@ export async function load({ params, url }) {
   }
 
 	return {
-    mode
+    mode,
+    phone: url.searchParams.get('phone')
   };
 }
