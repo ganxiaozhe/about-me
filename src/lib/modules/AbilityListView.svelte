@@ -2,10 +2,10 @@
   const AbilityList:{type:string, content:string}[] = [
     {type:'dev', content:"理解面向对象基本原理，能熟练使用 Node.js、PHP 进行系统及架构开发设计，可以使用 Java、Python 进行系统开发，了解 Rust、C / CPP。"},
     {type:'web-devices', content:"熟练使用 WEB 大前端相关技术，能够从头创建自适应界面，能通过 JavaScript 进行工程化开发设计，能借助 Electron、NW.js、uni-app 及 Flutter 进行跨平台系统应用开发工作。"},
-    {type:'api', content:"熟练掌握应用程序接口 API / SDK 开发，能快速完成 API 设计、开发、测试、部署及上线整套流程。"},
-    {type:'cache', content:"熟悉 LNMP 原理，熟悉常见的缓存技术如 Redis / Memcached，，熟悉数据库常见的操作及查询优化。"},
-    {type:'wallet', content:"熟悉支付平台整体架构及充值、提现、退款、打款、对账、结算、代发代付等基本业务流程。"},
-    {type:'sec', content: "熟悉渗透测试，社工技术，能借助各类情报平台、工具挖掘信息。"},
+    {type:'api', content:"对应用程序接口 API / SDK 有深入理解，能快速完成 API 设计、开发、测试及部署这一整套流程。"},
+    {type:'cache', content:"熟悉 LNMP 架构原理，熟悉数据库常见的操作及查询优化，精通常见的缓存技术如 Redis / Memcached。"},
+    {type:'wallet', content:"熟悉支付平台整体架构及充值、提现、退款、打款、对账、结算和代发代付等基本业务流程。"},
+    {type:'sec', content: "对渗透测试、社工技术有一定了解，能借助各类情报平台、工具进行信息挖掘。"},
     {type:'me', content: "拥抱新技术，接受新观点，终生学习者。"}
   ];
 </script>
