@@ -188,7 +188,7 @@ export const ProjectListData:ProjectItem[] = [
     ]
   },
   {
-    id: 'chiaufarm',
+    id: 'chiau',
     title: 'Chia | ChiauFarm - 多功能可视化挖矿程序',
     icon: '/icons/chiau.jpg',
     url: 'https://chiau.net/farm/',
@@ -197,6 +197,10 @@ export const ProjectListData:ProjectItem[] = [
     finished_at: '2021-06-08',
     contents: [
       {key: '结果', value: '作为 Chia Token 首个公开的多功能可视化自动耕种挖矿客户端，实现了多账户隔离、无服务器、代耕系统、操作自动化，并逆向实现稳定可靠的进度算法，发布后一周内下载量达 3,000 余次，效率提升39%。'},
+    ],
+    supports: [
+      {type:'image', value:'client-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'client-2.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -301,6 +305,9 @@ export const ProjectListData:ProjectItem[] = [
     finished_at: '🤐',
     contents: [
       {key: '背景', value: '海外商家需要一个简单的自动化订餐网站，客户可通过 PC、iPad、手机端进行点餐。点餐后将账单发送至客户邮箱，付款后再由餐厅制作，客户按照约定时间取餐。'},
+    ],
+    supports: [
+      {type:'image', value:'web.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
