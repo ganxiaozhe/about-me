@@ -268,6 +268,8 @@ export const ProjectListData:ProjectItem[] = [
     ],
     supports: [
       {type:'image', value:'mcadmin.cn.jpg'},
+      {type:'image', value:'web-1.jpg'},
+      {type:'image', value:'web-2.jpg'},
     ]
   },
   {
@@ -285,6 +287,10 @@ export const ProjectListData:ProjectItem[] = [
       <br/>网站前端使用 gQuery 框架，后端使用 gQueryPHP 框架，自主实现前后端工程化。
       <br/>利用社工、安全运维、渗透测试等知识，隐藏有效信息，在控制层防止穷举爆破、恶意文件上传，通过 SQLMap 工具查缺、PHP PDO 有效防止 SQL 注入，并及时处理 XSS 漏洞。`},
       {key: '成果', value: '累计注册用户人数达 34,000+，在国内早期玩家群体中拥有较高影响力。<br/>在线工具总计使用量已达 1,000W+，用户体验颇受好评。'}
+    ],
+    supports: [
+      {type:'image', value:'web-1.jpg'},
+      {type:'image', value:'web-2.jpg'},
     ]
   },
   {
