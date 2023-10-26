@@ -164,7 +164,9 @@ flex items-center justify-center z-20">
     class='object-cover' />
     {/each}
   </ul>
-  <Marquee class='sm:!hidden mt-6' repeat={item.supports.length>1 ? 1 : 2}>
+  <Marquee class='sm:!hidden mt-6' 
+  repeat={item.supports.length>1 ? 1 : 2} 
+  duration={item.supports.length>2 ? 3*item.supports.length : 9}>
     {#each item.supports as sup, i}
     <img src={sup.value.startsWith('/') ? sup.value : `/projects/${item.id}/${sup.value}`} alt='佐证材料 #{i}' 
     style='width:60vw'>

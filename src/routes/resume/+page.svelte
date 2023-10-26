@@ -73,7 +73,8 @@
 <Seo title='我的简历' />
 
 {#if PI.mode==='web'}
-<ul class="menu menu-horizontal bg-base-100 rounded-lg shadow border 
+<ul class="menu menu-horizontal flex-nowrap 
+bg-base-100 rounded-lg shadow border 
 fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
   <li>
     <a href='/' class="tooltip sm:tooltip-bottom" data-tip="主页">
@@ -248,7 +249,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </div>
 
     </section>
-    
+
     <div class='bg-base-200/70 py-6' class:lg:py-8={PI.mode==='pdf'}></div>
 
     <section>

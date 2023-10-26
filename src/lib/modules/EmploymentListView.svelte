@@ -26,7 +26,7 @@
   </ul>
   {/if}
   {#if item.supports}
-  <ul class='mt-3 hidden sm:grid grid-cols-1 items-stretch'>
+  <ul class='mt-3 grid grid-cols-1 items-stretch'>
     {#each item.supports as sup, i}
     <img src='/employments/{item.id}/{sup.value}' alt='佐证材料 #{i}'>
     {/each}
