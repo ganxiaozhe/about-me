@@ -7,7 +7,7 @@ export const EmploymentListData:EmploymentItem[] = [
     created_at: '2020-03-16',
     finished_at: '2022-03-03',
     supports: [
-      {type: 'image', value: 'license.jpg'}
+      {type: 'image', value: 'license.jpg', imageSize: {width:1835, height:1280}}
     ]
   },
   {
@@ -33,7 +33,7 @@ export const EmploymentListData:EmploymentItem[] = [
     role: 'CTO',
     created_at: '2021-11',
     supports: [
-      {type: 'image', value: 'contract-cto.jpg'}
+      {type: 'image', value: 'contract-cto.jpg', imageSize: {width:1090, height:1541}}
     ]
   },
   {
@@ -43,7 +43,7 @@ export const EmploymentListData:EmploymentItem[] = [
     role: 'CEO / CTO',
     created_at: '2021-12-14',
     supports: [
-      {type: 'image', value: 'license.jpg'}
+      {type: 'image', value: 'license.jpg', imageSize: {width:1879, height:1280}}
     ]
   }
 ];

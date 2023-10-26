@@ -12,9 +12,9 @@ export const ProjectListData:ProjectItem[] = [
       {key: '结果', value: '使用该工具生成的推文质量比人工撰写更加稳定，内容重复率从 39% 降至 7%；成本降低 1,724%～6,896%，每条仅需 0.3 元，保守估计每人效率提升 2,000% 以上。'}
     ],
     supports: [
-      {type:'image', value:'contract.jpg'},
-      {type:'image', value:'contract-evidence-a.jpg'},
-      {type:'image', value:'contract-evidence-b.jpg'}
+      {type:'image', value:'contract.jpg', imageSize:{width:1200, height:1554}},
+      {type:'image', value:'contract-evidence-a.jpg', imageSize:{width:1200, height:1698}},
+      {type:'image', value:'contract-evidence-b.jpg', imageSize:{width:1200, height:1698}}
     ]
   },
   {
@@ -30,8 +30,8 @@ export const ProjectListData:ProjectItem[] = [
       {key: '结果', value: '较传统开发效率提升 400%，受多家电子产品研发企业认可。已配套工业级产品发售，客户满意度 96%。'}
     ],
     supports: [
-      {type:'image', value:'contract.jpg'},
-      {type:'image', value:'client-1.jpg'},
+      {type:'image', value:'contract.jpg', imageSize:{width:1200, height:1553}},
+      {type:'image', value:'client-1.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -53,7 +53,7 @@ export const ProjectListData:ProjectItem[] = [
       created_at: '2021-11'
     },
     supports: [
-      {type:'image', value:'metauit.com.jpg'},
+      {type:'image', value:'metauit.com.jpg', imageSize:{width:1200, height:1608}},
     ]
   },
   {
@@ -74,9 +74,9 @@ export const ProjectListData:ProjectItem[] = [
       created_at: '2021-11'
     },
     supports: [
-      {type:'image', value:'/projects/metauit/metauit.com.jpg'},
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'metor-ability.jpg'},
+      {type:'image', value:'/projects/metauit/metauit.com.jpg', imageSize:{width:1200, height:1608}},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1360, height:2002}},
+      {type:'image', value:'metor-ability.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -93,8 +93,8 @@ export const ProjectListData:ProjectItem[] = [
       {key: '结果', value: '2023 年中旬近 30 天内测试人数超 2.8 万人，消费额达 1.7 万元。在 413 位用户反馈中，评分高达 98%。'},
     ],
     supports: [
-      {type:'image', value:'gxzv.com.jpg'},
-      {type:'image', value:'web-1.jpg'},
+      {type:'image', value:'gxzv.com.jpg', imageSize:{width:1184, height:1794}},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -110,9 +110,9 @@ export const ProjectListData:ProjectItem[] = [
       {key: '行动', value: '该项目前后端均使用自研框架 gQuery 进行开发，成功将开发时间从 45 天缩短至 29 天。<br/>由于旧站点到期，内容无法正常迁移，我通过 Node.js 快速实现爬虫程序，将数据完美迁移至新站点。'}
     ],
     supports: [
-      {type:'image', value:'contract.jpg'},
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'web-3.jpg'}
+      {type:'image', value:'contract.jpg', imageSize:{width:1200, height:1553}},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:2173}},
+      {type:'image', value:'web-3.jpg', imageSize:{width:1200, height:2173}}
     ]
   },
   {
@@ -129,8 +129,8 @@ export const ProjectListData:ProjectItem[] = [
       {key: '结果', value: '甲方团队通过该软件，将先前每件商品 30 分钟的工作时长缩减至 2 分钟。<br/>次月商户号累计销售额达 43 万，相较使用前提升了 1,075%。'},
     ],
     supports: [
-      {type:'image', value:'nonoerp.com.jpg'},
-      {type:'image', value:'web-n-client.jpg'},
+      {type:'image', value:'nonoerp.com.jpg', imageSize:{width:1184, height:1794}},
+      {type:'image', value:'web-n-client.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -147,9 +147,9 @@ export const ProjectListData:ProjectItem[] = [
       {key: '结果', value: '自 2022 年 8 月到 2023 年 10 月以来，该平台运行稳定，SLA 服务可用性 100%。<br/>数据上，系统处理 Excel 表格单号 266,462 条，总计金额 445,708,248 元。'},
     ],
     supports: [
-      {type:'image', value:'contract.jpg'},
-      {type:'image', value:'contract-evidence-a.jpg'},
-      {type:'image', value:'contract-evidence-b.jpg'}
+      {type:'image', value:'contract.jpg', imageSize:{width:1200, height:1553}},
+      {type:'image', value:'contract-evidence-a.jpg', imageSize:{width:1200, height:1698}},
+      {type:'image', value:'contract-evidence-b.jpg', imageSize:{width:1200, height:1698}}
     ]
   },
   {
@@ -170,9 +170,9 @@ export const ProjectListData:ProjectItem[] = [
       created_at: '2021-05'
     },
     supports: [
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'doc-1.jpg'},
-      {type:'image', value:'visual-effect.jpg'},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'doc-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'visual-effect.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -212,9 +212,9 @@ export const ProjectListData:ProjectItem[] = [
       {key: '行动', value: '创建文旅专题网站，使用自研 gQuery 框架开发，H5 自适应。'}
     ],
     supports: [
-      {type:'image', value:'panzhihua.live.jpg'},
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'web-2.jpg'},
+      {type:'image', value:'panzhihua.live.jpg', imageSize:{width:1184, height:1794}},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'web-2.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -226,12 +226,12 @@ export const ProjectListData:ProjectItem[] = [
     created_at: '2020-10-24',
     updated_at: '2022-05-31',
     supports: [
-      {type:'image', value:'ajufood.cn.jpg'},
-      {type:'image', value:'v1-1.jpg'},
-      {type:'image', value:'v1-2.jpg'},
-      {type:'image', value:'1.jpg'},
-      {type:'image', value:'2.jpg'},
-      {type:'image', value:'3.jpg'},
+      {type:'image', value:'ajufood.cn.jpg', imageSize:{width:1184, height:1670}},
+      {type:'image', value:'v1-1.jpg', imageSize:{width:1200, height:1936}},
+      {type:'image', value:'v1-2.jpg', imageSize:{width:1200, height:1936}},
+      {type:'image', value:'1.jpg', imageSize:{width:1200, height:1814}},
+      {type:'image', value:'2.jpg', imageSize:{width:1200, height:1814}},
+      {type:'image', value:'3.jpg', imageSize:{width:1200, height:1814}},
     ]
   },
   {
@@ -248,9 +248,9 @@ export const ProjectListData:ProjectItem[] = [
       {key: '成果', value: '在中小型项目中，gQuery 提升了 49% 的开发效率，并于 Gitee 成为推荐项目。<br/>基于 gQuery 开发了数十余种复杂组件，包括 MD 编辑器、浏览器菜单、滚动视差、灯箱等。'}
     ],
     supports: [
-      {type:'image', value:'gquery.cn.jpg'},
-      {type:'image', value:'gquery.net.jpg'},
-      {type:'image', value:'software-copyright.jpg'},
+      {type:'image', value:'gquery.cn.jpg', imageSize:{width:1184, height:1670}},
+      {type:'image', value:'gquery.net.jpg', imageSize:{width:1184, height:1794}},
+      {type:'image', value:'software-copyright.jpg', imageSize:{width:1200, height:1654}},
     ]
   },
   {
@@ -267,9 +267,9 @@ export const ProjectListData:ProjectItem[] = [
       <br/>通过信息隐藏、分布式、CDN 聚合等方法低成本实现 DDOS 防护及应用安全。`},
     ],
     supports: [
-      {type:'image', value:'mcadmin.cn.jpg'},
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'web-2.jpg'},
+      {type:'image', value:'mcadmin.cn.jpg', imageSize:{width:1184, height:1670}},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'web-2.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {
@@ -289,8 +289,8 @@ export const ProjectListData:ProjectItem[] = [
       {key: '成果', value: '累计注册用户人数达 34,000+，在国内早期玩家群体中拥有较高影响力。<br/>在线工具总计使用量已达 1,000W+，用户体验颇受好评。'}
     ],
     supports: [
-      {type:'image', value:'web-1.jpg'},
-      {type:'image', value:'web-2.jpg'},
+      {type:'image', value:'web-1.jpg', imageSize:{width:1200, height:1800}},
+      {type:'image', value:'web-2.jpg', imageSize:{width:1200, height:1800}},
     ]
   },
   {

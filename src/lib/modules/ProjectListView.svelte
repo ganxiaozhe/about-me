@@ -161,7 +161,8 @@ flex items-center justify-center z-20">
   <ul class='px-profile mt-6 hidden sm:grid grid-cols-3 gap-2 items-stretch'>
     {#each item.supports as sup, i}
     <img src={sup.value.startsWith('/') ? sup.value : `/projects/${item.id}/${sup.value}`} alt='佐证材料 #{i}' 
-    class='object-cover' />
+    class='object-cover' 
+    data-lightbox={true} data-width={sup.imageSize?.width} data-height={sup.imageSize?.height} />
     {/each}
   </ul>
   <Marquee class='sm:!hidden mt-6' 
@@ -169,7 +170,8 @@ flex items-center justify-center z-20">
   duration={item.supports.length>2 ? 3*item.supports.length : 9}>
     {#each item.supports as sup, i}
     <img src={sup.value.startsWith('/') ? sup.value : `/projects/${item.id}/${sup.value}`} alt='佐证材料 #{i}' 
-    style='width:60vw'>
+    style='width:60vw' 
+    data-lightbox={true} data-width={sup.imageSize?.width} data-height={sup.imageSize?.height} />
     {/each}
   </Marquee>
   {/if}

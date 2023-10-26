@@ -27,6 +27,8 @@
 :root[data-theme='light'] {
 	background-color: hsl(var(--b2));
 }
+/* 灯箱 */
+img[data-lightbox] {cursor: pointer;}
 
 
 @media (min-width: 1280px) {

@@ -28,7 +28,8 @@
   {#if item.supports}
   <ul class='mt-3 grid grid-cols-1 items-stretch'>
     {#each item.supports as sup, i}
-    <img src='/employments/{item.id}/{sup.value}' alt='佐证材料 #{i}'>
+    <img src='/employments/{item.id}/{sup.value}' alt='佐证材料 #{i}' 
+    data-lightbox={true} data-width={sup.imageSize?.width} data-height={sup.imageSize?.height} />
     {/each}
   </ul>
   {/if}

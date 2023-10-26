@@ -11,6 +11,14 @@ interface Profile {
   intros: string[];
 }
 
+interface SupportItem {
+  type:'image', value:string,
+  name?:string,
+  imageSize?: {
+    width:number, height:number
+  }
+}
+
 
 interface EmploymentItem {
   id: string;
@@ -20,10 +28,7 @@ interface EmploymentItem {
   created_at: string;
   finished_at?: string;
   contents?: string[];
-  supports?: {
-    type:'image', value:string,
-    name?:string
-  }[];
+  supports?: SupportItem[];
 }
 
 
@@ -47,10 +52,7 @@ interface ProjectItem {
     created_at: string;
     finished_at?: string;
   };
-  supports?: {
-    type:'image', value:string,
-    name?:string
-  }[];
+  supports?: SupportItem[];
 }
 
 
