@@ -1,5 +1,5 @@
 <script lang='ts'>
-  const SkillList = [
+  const SkillList:SkillItem[] = [
     {name:'编程', items:[
       {key:'精通', value:'HTML/CSS, JavaScript, Node.js, PHP'},
       {key:'熟练', value:'MySQL, Java, Python, Dart, Redis, Memcached, Nginx, Linux, Git, Docker'},

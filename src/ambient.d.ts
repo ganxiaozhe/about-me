@@ -12,18 +12,24 @@ interface Profile {
 }
 
 
-interface EmploymentList {
+interface EmploymentItem {
+  id: string;
   name: string;
   location: string;
   role: string;
   created_at: string;
   finished_at?: string;
   contents?: string[];
+  supports?: {
+    type:'image', value:string,
+    name?:string
+  }[];
 }
 
 
-interface ProjectList {
-  class?: string;
+interface ProjectItem {
+  id: string;
+  domClass?: string;
   title: string;
   icon?: string;
   url?: string;
@@ -41,10 +47,14 @@ interface ProjectList {
     created_at: string;
     finished_at?: string;
   };
+  supports?: {
+    type:'image', value:string,
+    name?:string
+  }[];
 }
 
 
-interface SkillList {
+interface SkillItem {
   name: string;
   items: {
     key: string;

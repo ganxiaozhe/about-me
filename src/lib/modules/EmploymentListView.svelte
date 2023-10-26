@@ -1,32 +1,5 @@
 <script lang='ts'>
-  const EmploymentList:EmploymentList[] = [
-    {
-      name: '荣昌区甘小蔗网络技术工作室',
-      location: '重庆, 中国',
-      role: 'CEO / CTO',
-      created_at: '2020-03-16',
-      finished_at: '2022-03-03'
-    },
-    {
-      name: '***',
-      location: '',
-      role: '保密需要该经历不可见',
-      created_at: '2020-05',
-      finished_at: '2021-05'
-    },
-    {
-      name: '广西迈特优科技发展有限公司',
-      location: '远程工作',
-      role: 'CTO',
-      created_at: '2021-05'
-    },
-    {
-      name: '重庆浮木科技有限公司',
-      location: '重庆, 中国',
-      role: 'CEO / CTO',
-      created_at: '2021-12-14'
-    }
-  ];
+	export let EmploymentList:EmploymentItem[];
 </script>
 
 
@@ -49,6 +22,13 @@
   text-sm opacity-90'>
     {#each item.contents as content}
     <li>{content}</li>
+    {/each}
+  </ul>
+  {/if}
+  {#if item.supports}
+  <ul class='mt-3 hidden sm:grid grid-cols-1 items-stretch'>
+    {#each item.supports as sup, i}
+    <img src='/employments/{item.id}/{sup.value}' alt='佐证材料 #{i}'>
     {/each}
   </ul>
   {/if}

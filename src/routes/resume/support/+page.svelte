@@ -1,16 +1,12 @@
 <script lang='ts'>
-	import { browser, dev } from "$app/environment";
-	import Badge from "$lib/components/Badge.svelte";
 	import { EmploymentListData } from "$lib/data/EmploymentList";
 	import { ProjectListData } from "$lib/data/ProjectList";
-	import AbilityListView from "$lib/modules/AbilityListView.svelte";
 	import EmploymentListView from "$lib/modules/EmploymentListView.svelte";
 	import ProjectListView from "$lib/modules/ProjectListView.svelte";
 	import Seo from "$lib/modules/SEO.svelte";
-	import SkillListView from "$lib/modules/SkillListView.svelte";
-
+	import { onMount } from "svelte";
 	import type { PageData } from "./$types";
-	export let data:PageData;
+  export let data:PageData;
 
   const PI = {
     mode: data.mode,
@@ -18,47 +14,18 @@
     shareTimer: 0,
   };
 
-  const Profile:Profile = {
-    fullname: '具诚人',
-    fullname_en: 'JU Chengren',
-    nickname: '甘小蔗',
-    nickname_en: 'Sugarcane',
-    gender: '男',
-    birthdate: '2002-02-14',
-    email: 'hi@gxzv.com',
-    phone: data.phone || (dev ? '18883000080' : '×Ï<ßM4ÓÍ'),
-    website: 'https://gxzv.com',
-    intros: [
-      '一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发及运营经验。',
-      '致力于多样化，包容开放行为，拥抱伤害和困顿。'
-    ],
-  };
-
-
   let EmploymentList:EmploymentItem[] = EmploymentListData.map(item=>{
-    return {...item, supports: undefined};
+    return {...item, contents: undefined};
   });
-  let ProjectList:ProjectItem[] = [...ProjectListData.map(item=>{
-    return {...item, supports: undefined};
-  }), {
-    id: 'more',
-    domClass: 'opacity-80',
-    title: '更多项目请私信咨询',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
- <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
- <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
-</svg>`,
-    keywords: ['🤐'],
-    finished_at: '2023-10',
-    contents: [
-      {key: '说明', value:'有较多项目因待完善或保密需要未做公布，劳烦私信咨询。'}
-    ]
-  }];
+  let ProjectList:ProjectItem[] = ProjectListData.map(item=>{
+    return {...item, contents: undefined};
+  });
 
 
   // 分享简历链接
   function share(){
-    const text = `这家伙的简历还挺有意思，分享给你：🔗 ${window.location.origin+window.location.pathname}`;
+    const resumeURL = window.location.origin+'/resume';
+    const text = `这家伙的简历还挺有意思，分享给你：🔗 ${resumeURL}\n\n而且竟然有公开相关佐证？真不怕信息泄露？🔗 ${resumeURL}/support`;
     navigator.clipboard.writeText(text).then(()=>{
 			PI.shareTip = '内容已复制至剪贴板';
 		}, function(err){
@@ -70,7 +37,7 @@
   }
 </script>
 
-<Seo title='我的简历' />
+<Seo title='佐证材料 | 我的简历' />
 
 {#if PI.mode==='web'}
 <ul class="menu menu-horizontal bg-base-100 rounded-lg shadow border 
@@ -101,13 +68,13 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
     </a>
   </li>
   <li>
-    <a href='/resume/support' class="tooltip sm:tooltip-bottom" data-tip='查看佐证'>
+    <a href='/resume' class="tooltip sm:tooltip-bottom" data-tip="查看简历">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-        <path d="M21 21l-6 -6"></path>
-        <path d="M10 13l0 .01"></path>
-        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474"></path>
+        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+        <path d="M9 17h6"></path>
+        <path d="M9 13h6"></path>
       </svg>
     </a>
   </li>
@@ -149,34 +116,10 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </button>
       {/if}
     </div>
-    <section class='p-profile'>
-      <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
-      <div class='flex flex-wrap items-center gap-y-2 gap-3 mt-1'>
-        <Badge type='gender'>
-          {new Date().getFullYear() - new Date(Profile.birthdate).getFullYear()} 岁
-        </Badge>
-        {#if Profile.website}
-        <div class='tooltip tooltip-bottom' data-tip='个人网站'>
-          <Badge type='website' iconClass='text-green-500' rightClass='bg-green-700'>
-            <a href={Profile.website}>{Profile.website.replace(/^https?:\/\//, '')}</a>
-          </Badge>
-        </div>
-        {/if}
-        <div class='tooltip tooltip-bottom' data-tip='电子邮箱'>
-          <Badge type='mail' iconClass='text-green-500' rightClass='bg-green-700'><a href='mailto:{Profile.email}'>{Profile.email}</a></Badge>
-        </div>
-        {#if Profile.phone}
-        <div class='tooltip tooltip-bottom' data-tip='手机号码'>
-          <Badge type='phone' iconClass='text-green-500' rightClass='bg-green-700'><a href={isNaN(Number(Profile.phone)) ? null : `sms:${Profile.phone}`}>+86 {Profile.phone}</a></Badge>
-        </div>
-        {/if}
-      </div>
 
-      <div class='leading-relaxed mt-4 text-sm xs:text-base'>
-        {#each Profile.intros as intro}
-        <p class='inline sm:block'>{@html intro}</p>
-        {/each}
-      </div>
+    <section class='p-profile'>
+      <h5 class='text-sm'>JU Chengren</h5>
+      <h1 class='text-3xl font-bold'>佐证材料</h1>
     </section>
 
     <section class='bg-base-200/70 leading-relaxed'>
@@ -214,48 +157,6 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </ProjectListView>
     </section>
 
-
-    <section class='bg-base-200/70 pt-4'>
-      <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-          <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1"></path>
-          <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
-       </svg>个人能力</h2>
-      </div>
-
-      <AbilityListView />
-    </section>
-
-
-
-    <section class='bg-base-200/70 pt-4'>
-      <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
-          <path d="M14.5 5.5l4 4"></path>
-          <path d="M12 8l-5 -5l-4 4l5 5"></path>
-          <path d="M7 8l-1.5 1.5"></path>
-          <path d="M16 12l5 5l-4 4l-5 -5"></path>
-          <path d="M16 17l-1.5 1.5"></path>
-        </svg>个人技能</h2>
-      </div>
-
-      <div class='flex flex-col gap-5'>
-        <SkillListView />
-      </div>
-
-    </section>
-    
     <div class='bg-base-200/70 py-6' class:lg:py-8={PI.mode==='pdf'}></div>
-
-    <section>
-      <div class='px-profile py-6 text-sm sm:text-base' class:lg:py-8={PI.mode==='pdf'}>
-        <p class='opacity-80'>🌱 World is powered by solitude</p>
-        <p class='opacity-80'>🍀 相信内向者的力量</p>
-      </div>
-    </section>
   </div>
 </div>
