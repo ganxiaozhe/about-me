@@ -17,23 +17,23 @@
   });
 
   function handleClick(event:any){
-      const $tg = event.target;
-      const lightbox = $tg.getAttribute('data-lightbox');
+    const $tg = event.target;
+    const lightbox = $tg.getAttribute('data-lightbox');
 
-      if(lightbox==='true' && $tg.nodeName.toLowerCase() === 'img'){
-        const src = $tg.getAttribute('src'),
-        width = Number($tg.getAttribute('data-width'))||1200,
-        height = Number($tg.getAttribute('data-height'))||1800,
-        alt = $tg.getAttribute('alt')||'image';
+    if(lightbox==='true' && $tg.nodeName.toLowerCase() === 'img'){
+      const src = $tg.getAttribute('src'),
+      width = Number($tg.getAttribute('data-width'))||1200,
+      height = Number($tg.getAttribute('data-height'))||1800,
+      alt = $tg.getAttribute('alt')||'image';
 
-        const pswp = new PhotoSwipe({
-          dataSource: [
-            {src, width, height, alt}
-          ],
-        });
-        pswp.init();
-      }
+      const pswp = new PhotoSwipe({
+        dataSource: [
+          {src, width, height, alt}
+        ],
+      });
+      pswp.init();
     }
+  }
 </script>
 
 {#if !dev}

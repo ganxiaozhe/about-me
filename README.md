@@ -1,38 +1,42 @@
-# create-svelte
+# AboutMe
+基于 SvelteKit 构建的，适用于独立开发者的多功能自适应在线简历。
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+查看在线 Demo: [Cloudflare Pages](https://about.gxzv.com/resume?repo)
 
-## Creating a project
+![部分页面截图](./readme/image.jpg)
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 简历结构
+### 简述
+![简述部分截图](./readme/image-1.jpg)
+`/src/routes/+page.svelte`
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+手机号经过 `window.atob` 方法进行编码，非明文。实际分发链接时可以通过传参以明文显示，如：`resume?phone=18800000000`
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### 工作经历
+![工作经历部分截图](./readme/image-2.jpg)
+`/src/lib/data/EmploymentList.ts`
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### 个人项目
+![个人项目部分截图](./readme/image-3.jpg)
+`/src/lib/data/ProjectList.ts`
 
-## Building
+支持通过标签进行筛选：
 
-To create a production version of your app:
+![筛选功能截图](./readme/image-4.jpg)
 
-```bash
-npm run build
-```
 
-You can preview the production build with `npm run preview`.
+### 个人能力
+![个人能力部分截图](./readme/image-5.jpg)
+`/src/lib/modules/AbilityListView.svelte`
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+### 个人技能
+![个人技能部分截图](./readme/image-6.jpg)
+`/src/lib/modules/SkillListView.svelte`
+
+
+## 作证材料支持
+![个人项目部分截图](./readme/image-7.jpg)

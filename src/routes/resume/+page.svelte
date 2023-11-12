@@ -26,7 +26,7 @@
     gender: '男',
     birthdate: '2002-02-14',
     email: 'hi@gxzv.com',
-    phone: data.phone || (dev ? '18883000080' : '×Ï<ßM4ÓÍ'),
+    phone: data.phone || (dev ? '188****0080' : ''),
     website: 'https://gxzv.com',
     intros: [
       '一名全栈工程师 & 独立开发者，有六年的从 0 到 1 的互联网项目开发及运营经验。',
