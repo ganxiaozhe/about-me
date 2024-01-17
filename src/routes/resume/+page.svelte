@@ -16,6 +16,7 @@
     mode: data.mode,
     shareTip: '分享',
     shareTimer: 0,
+    employmentShow: false
   };
 
   const Profile:Profile = {
@@ -74,7 +75,7 @@
 
 {#if PI.mode==='web'}
 <ul class="menu menu-horizontal flex-nowrap 
-bg-base-100 rounded-lg shadow border 
+bg-base-100 dark:bg-base-300 rounded-lg shadow border 
 fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
   <li>
     <a href='/' class="tooltip sm:tooltip-bottom" data-tip="主页">
@@ -153,7 +154,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
       <div class='flex flex-wrap items-center gap-y-2 gap-3 mt-1'>
         <Badge type='gender'>
-          {new Date().getFullYear() - new Date(Profile.birthdate).getFullYear()} 岁
+          {Math.floor((Date.now() - new Date(Profile.birthdate).getTime())/(1000*60*60*24*365))} 岁
         </Badge>
         {#if Profile.website}
         <div class='tooltip tooltip-bottom' data-tip='个人网站'>
@@ -194,7 +195,18 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </div>
 
       <div class='flex flex-col gap-5'>
+        {#if PI.mode!=='pdf' && !PI.employmentShow}
+        <div class='p-profile !py-0'>
+          <button class='btn w-full btn-primary' on:click={()=>{
+            PI.employmentShow = !PI.employmentShow;
+          }}>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stereo-glasses" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3h-2l-3 9" /><path d="M16 3h2l3 9" /><path d="M3 12v7a1 1 0 0 0 1 1h4.586a1 1 0 0 0 .707 -.293l2 -2a1 1 0 0 1 1.414 0l2 2a1 1 0 0 0 .707 .293h4.586a1 1 0 0 0 1 -1v-7h-18z" /><path d="M7 16h1" /><path d="M16 16h1" /></svg>
+            查看
+          </button>
+        </div>
+        {:else}
         <EmploymentListView {EmploymentList} />
+        {/if}
       </div>
     </section>
 
