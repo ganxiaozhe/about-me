@@ -34,10 +34,11 @@ interface EmploymentItem {
 
 interface ProjectItem {
   id: string;
-  domClass?: string;
+  dom_class?: string;
   title: string;
   icon?: string;
   url?: string;
+  url_host?: string;
   keywords: string[];
   created_at?: string;
   updated_at?: string;

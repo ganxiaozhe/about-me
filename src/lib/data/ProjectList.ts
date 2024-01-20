@@ -57,6 +57,16 @@ export const ProjectListData:ProjectItem[] = [
     ]
   },
   {
+    id: 'taobor',
+    title: 'Taobor - 淘宝商品信息采集',
+    url: 'https://chromewebstore.google.com/detail/taobor-%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF%E6%8A%93%E5%8F%96/kgkndlpgecddjehgpcfjjnefbmcfamol',
+    keywords: ['Chrome 插件', '爬虫', 'Node.js', 'Svelte'],
+    created_at: '2023-03-21',
+    contents: [
+      {key: '介绍', value: '基于 SvelteKit 开发的 Chrome 浏览器拓展程序，可以采集淘宝商品的详情信息。'},
+    ],
+  },
+  {
     id: 'llms-api',
     title: '大型语言模型聚合 API 服务',
     url: 'https://metor-api.metauit.com',

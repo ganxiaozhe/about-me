@@ -9,10 +9,10 @@
 .border {
 	border-width: 1px;
 	border-style: solid;
-	border-color: hsl(var(--b3));
+	border-color: oklch(var(--b3));
 }
 [class*='border-']{
-	border-color: hsl(var(--b3));
+	border-color: oklch(var(--bc) / 10%);
 }
 
 @tailwind base;
@@ -45,24 +45,25 @@ img[data-lightbox] {cursor: pointer;}
 
 
 .text-shadow {
-	text-shadow: 1px 1px 2px hsl(var(--b1));
+	text-shadow: 1px 1px 2px oklch(var(--b1));
 }
 
-.text-app {color: #f6d200;}
+.text-app {color: oklch(var(--app-c));}
 .text-app-content {color: #fff;}
-.bg-app {background-color: #b68000;}
-.border-app {border-color: #f6d200;}
-
-.h-body {
-	height: calc(100vh - 4rem);
+.bg-app {background-color: oklch(var(--app));}
+.border-app {border-color: oklch(var(--app-c));}
+.btn-app {
+	background-color: oklch(var(--app));border-color: oklch(var(--app));
+	color: #fff;outline-color: oklch(var(--app-c));
 }
-.min-h-body {
-	min-height: calc(100vh - 4rem);
+.btn-app:hover {
+	background-color: color-mix(in oklab, oklch(var(--app)), black 18%);
 }
-@media (min-width: 768px) {
-	.md\:min-h-body {
-		min-height: calc(100vh - 4rem);
-	}
+:root {
+  --app: .686283 .185567 148.958922;
+  --app-c: .78 .2 149.11;
+	--swiper-pagination-color: oklch(var(--app));
+	--swiper-pagination-bullet-inactive-color: #fff;
 }
 
 .grid-pattern {
@@ -74,17 +75,17 @@ img[data-lightbox] {cursor: pointer;}
 
 
 /* 简历 */
-.p-profile {padding: 2.5rem 3rem;}
+.p-profile {padding: 3rem 3rem 2.5rem 3rem;}
 .px-profile {padding-left: 3rem;padding-right: 3rem;}
 @media (max-width: 768px){
-  .p-profile {padding: 2rem;}
+  .p-profile {padding: 2rem;padding-top: 3rem;}
   .px-profile {padding-left: 2rem;padding-right: 2rem;}
 }
 @media (min-width: 768px) {
-	.profile-pdf .p-profile {padding: 3rem 4rem;}
+	.profile-pdf .p-profile {padding: 4rem 4rem 3rem 4rem;}
 	.profile-pdf .px-profile {padding-left: 4rem;padding-right: 4rem;}
 }
 @media (min-width: 1024px) {
-	.profile-pdf .p-profile {padding: 4rem 7rem;}
+	.profile-pdf .p-profile {padding: 5rem 7rem 4rem 7rem;}
 	.profile-pdf .px-profile {padding-left: 7rem;padding-right: 7rem;}
 }

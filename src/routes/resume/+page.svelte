@@ -9,7 +9,18 @@
 	import Seo from "$lib/modules/SEO.svelte";
 	import SkillListView from "$lib/modules/SkillListView.svelte";
 
+  import {
+    IconFileTypePdf, IconHome, IconReceipt, IconShare,
+    IconFileTypeHtml,
+    IconBuildingEstate, IconStereoGlasses,
+    IconMicroscope,
+    IconAccessible,
+    IconTools
+  } from "@tabler/icons-svelte";
+
 	import type { PageData } from "./$types";
+	import Marquee from "$lib/components/Marquee.svelte";
+	import type { ComponentType } from "svelte";
 	export let data:PageData;
 
   const PI = {
@@ -35,6 +46,32 @@
     ],
   };
 
+  const Menus:{
+    icon: ComponentType;
+    title: string;
+    tip: string;
+
+    href?: string;
+    action?: string;
+    smHidden?: boolean;
+  }[] = [
+    {icon: IconHome, title:'主页', tip:'主页', href:'/', smHidden:true},
+    {icon: IconFileTypePdf, title:'PDF', tip:'PDF 模式', action:'pdf'},
+    {icon: IconReceipt, title:'佐证', tip:'查看佐证', href:'/resume/support'},
+    {icon: IconShare, title:'分享', tip:'分享', action:'share'},
+  ];
+
+  const Navs:{
+    icon: ComponentType;
+    title: string;
+    id: string
+  }[] = [
+    {id: 'employments', icon: IconBuildingEstate, title: '工作经历'},
+    {id: 'projects', icon: IconMicroscope, title: '个人项目'},
+    {id: 'accessibles', icon: IconAccessible, title: '个人能力'},
+    {id: 'tools', icon: IconTools, title: '个人技能'},
+  ];
+
 
   let EmploymentList:EmploymentItem[] = EmploymentListData.map(item=>{
     return {...item, supports: undefined};
@@ -43,7 +80,7 @@
     return {...item, supports: undefined};
   }), {
     id: 'more',
-    domClass: 'opacity-80',
+    dom_class: 'opacity-80',
     title: '更多项目请私信咨询',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -67,64 +104,48 @@
 		});
 
     clearTimeout(PI.shareTimer);
-    PI.shareTimer = setTimeout(()=>{PI.shareTip = '复制';}, 1500);
+    PI.shareTimer = setTimeout(()=>{PI.shareTip = '分享';}, 1500);
   }
 </script>
 
 <Seo title='我的简历' />
 
 {#if PI.mode==='web'}
-<ul class="menu menu-horizontal flex-nowrap 
-bg-base-100 dark:bg-base-300 rounded-lg shadow border 
-fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
-  <li>
-    <a href='/' class="tooltip sm:tooltip-bottom" data-tip="主页">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
-        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-      </svg>
+<div class='max-w-[920px] w-full py-0 sm:px-profile
+flex justify-between
+fixed z-20 bottom-0 sm:bottom-[unset] sm:top-6 
+left-1/2 -translate-x-1/2'>
+  <div class="flex items-center shrink-0 max-sm:pt-1
+  bg-base-100 dark:bg-base-300 
+  shadow border">
+    {#each Menus as item}
+    <a href={item.href||null} on:click={()=>{
+      if(item.action==='pdf'){PI.mode = 'pdf';}
+      if(item.action==='share'){share();}
+    }} class="tooltip sm:tooltip-bottom
+    btn btn-ghost font-normal
+    flex max-sm:flex-col max-sm:gap-1" 
+    data-tip={item.action==='share' ? PI.shareTip : item.tip}
+    class:max-sm:hidden={item.smHidden}>
+      <svelte:component this={item.icon} class='w-5 h-5' />
+      <span class='max-sm:text-xs'>{item.title}</span>
     </a>
-  </li>
-  <li>
-    <a on:click={()=>{
-      PI.mode = 'pdf';
-    }} href={null} class="tooltip sm:tooltip-bottom" data-tip="PDF 模式">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-        <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
-        <path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"></path>
-        <path d="M17 18h2"></path>
-        <path d="M20 15h-3v6"></path>
-        <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z"></path>
-      </svg>
+    {/each}
+  </div>
+
+  <Marquee class="bg-base-100 dark:bg-base-100 
+  flex items-center flex-grow max-sm:pt-1
+  shadow border border-l-0" 
+  repeat={2} duration={20} gap='0px'>
+    {#each Navs as item}
+    <a href='#{item.id}' class="btn btn-ghost font-normal
+    flex max-sm:flex-col max-sm:gap-1">
+      <svelte:component this={item.icon} class='w-5 h-5' />
+      <span class='max-sm:text-xs'>{item.title}</span>
     </a>
-  </li>
-  <li>
-    <a href='/resume/support' class="tooltip sm:tooltip-bottom" data-tip='查看佐证'>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-        <path d="M11.102 17.957c-3.204 -.307 -5.904 -2.294 -8.102 -5.957c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6a19.5 19.5 0 0 1 -.663 1.032"></path>
-        <path d="M15 19l2 2l4 -4"></path>
-     </svg>
-    </a>
-  </li>
-  <li>
-    <a on:click={share} href={null} class="tooltip sm:tooltip-bottom" data-tip={PI.shareTip}>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-        <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-        <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-        <path d="M8.7 10.7l6.6 -3.4"></path>
-        <path d="M8.7 13.3l6.6 3.4"></path>
-      </svg>
-    </a>
-  </li>
-</ul>
+    {/each}
+  </Marquee>
+</div>
 {/if}
 
 
@@ -135,18 +156,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       <button on:click={()=>{
         PI.mode = 'web';
       }} class='tooltip tooltip-left inline-flex btn btn-square' data-tip='WEB 模式'>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-          <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
-          <path d="M2 21v-6"></path>
-          <path d="M5 15v6"></path>
-          <path d="M2 18h3"></path>
-          <path d="M20 15v6h2"></path>
-          <path d="M13 21v-6l2 3l2 -3v6"></path>
-          <path d="M7.5 15h3"></path>
-          <path d="M9 15v6"></path>
-        </svg>
+        <IconFileTypeHtml />
       </button>
       {/if}
     </div>
@@ -180,18 +190,12 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
       </div>
     </section>
 
-    <section class='bg-base-200/70 leading-relaxed'>
+    <section id='employments' class='bg-base-200/70 leading-relaxed'>
       <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M3 21h18"></path>
-          <path d="M19 21v-4"></path>
-          <path d="M19 17a2 2 0 0 0 2 -2v-2a2 2 0 1 0 -4 0v2a2 2 0 0 0 2 2z"></path>
-          <path d="M14 21v-14a3 3 0 0 0 -3 -3h-4a3 3 0 0 0 -3 3v14"></path>
-          <path d="M9 17v4"></path>
-          <path d="M8 13h2"></path>
-          <path d="M8 9h2"></path>
-       </svg>工作经历</h2>
+        <h2 class='text-2xl font-semibold'>
+          <IconBuildingEstate class='text-app' />
+          工作经历
+        </h2>
       </div>
 
       <div class='flex flex-col gap-5'>
@@ -200,7 +204,7 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
           <button class='btn w-full btn-primary' on:click={()=>{
             PI.employmentShow = !PI.employmentShow;
           }}>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stereo-glasses" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 3h-2l-3 9" /><path d="M16 3h2l3 9" /><path d="M3 12v7a1 1 0 0 0 1 1h4.586a1 1 0 0 0 .707 -.293l2 -2a1 1 0 0 1 1.414 0l2 2a1 1 0 0 0 .707 .293h4.586a1 1 0 0 0 1 -1v-7h-18z" /><path d="M7 16h1" /><path d="M16 16h1" /></svg>
+            <IconStereoGlasses />
             查看
           </button>
         </div>
@@ -211,30 +215,22 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
     </section>
 
 
-    <section class='bg-base-200/70 pt-4'>
+    <section id='projects' class='bg-base-200/70 pt-4'>
       <ProjectListView bind:ProjectList>
-        <h2 slot='title' class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M5 21h14"></path>
-          <path d="M6 18h2"></path>
-          <path d="M7 18v3"></path>
-          <path d="M9 11l3 3l6 -6l-3 -3z"></path>
-          <path d="M10.5 12.5l-1.5 1.5"></path>
-          <path d="M17 3l3 3"></path>
-          <path d="M12 21a6 6 0 0 0 3.715 -10.712"></path>
-      </svg>个人项目</h2>
+        <h2 slot='title' class='text-2xl font-semibold'>
+          <IconMicroscope class='text-app' />
+          个人项目
+        </h2>
       </ProjectListView>
     </section>
 
 
-    <section class='bg-base-200/70 pt-4'>
+    <section id='accessibles' class='bg-base-200/70 pt-4'>
       <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-          <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1"></path>
-          <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
-       </svg>个人能力</h2>
+        <h2 class='text-2xl font-semibold'>
+          <IconAccessible class='text-app' />
+          个人能力
+        </h2>
       </div>
 
       <AbilityListView />
@@ -242,17 +238,12 @@ fixed z-10 bottom-4 sm:bottom-[unset] sm:top-6 left-1/2 -translate-x-1/2">
 
 
 
-    <section class='bg-base-200/70 pt-4'>
+    <section id='tools' class='bg-base-200/70 pt-4'>
       <div class='p-profile flex items-center justify-between'>
-        <h2 class='text-2xl font-semibold'><svg xmlns="http://www.w3.org/2000/svg" class="icon text-green-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
-          <path d="M14.5 5.5l4 4"></path>
-          <path d="M12 8l-5 -5l-4 4l5 5"></path>
-          <path d="M7 8l-1.5 1.5"></path>
-          <path d="M16 12l5 5l-4 4l-5 -5"></path>
-          <path d="M16 17l-1.5 1.5"></path>
-        </svg>个人技能</h2>
+        <h2 class='text-2xl font-semibold'>
+          <IconTools class='text-app' />
+          个人技能
+        </h2>
       </div>
 
       <div class='flex flex-col gap-5'>

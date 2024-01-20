@@ -12,6 +12,11 @@
       proj.keywords.map(key=>{
         kwList.includes(key) || kwList.push(key);
       });
+
+      if(proj.url){
+        const url = new URL(proj.url);
+        proj.url_host = url.hostname;
+      }
     });
     Keywords = kwList;
   }
@@ -94,7 +99,7 @@ flex items-center justify-center z-20">
 
 <div class='flex flex-col gap-5'>
 {#each ProjectList.filter(proj => PI.filters.length>0 ? PI.filters.some(k=>proj.keywords.includes(k)) : true ) as item(item.title)}
-<section class='item group pb-3 {item.domClass||''}'>
+<section class='item group pb-3 {item.dom_class||''}'>
   {#if item.owned_by}
   <div class="bg-green-600/10 px-profile py-2 mb-3
   flex gap-4 text-sm sm:text-base">
@@ -110,7 +115,7 @@ flex items-center justify-center z-20">
   {/if}
   <div class='px-profile flex items-start gap-4'>
     <div class="avatar placeholder rounded-sm overflow-hidden shrink-0" class:online={!item.finished_at}>
-      <div class="bg-neutral-focus text-neutral-content w-12 h-12">
+      <div class="bg-neutral text-neutral-content w-12 h-12">
         {#if item.icon}
           {#if item.icon.startsWith('<')}
           {@html item.icon}
@@ -131,7 +136,7 @@ flex items-center justify-center z-20">
         {#if item.url}
         <a href={item.url} target='_blank' class='flex'>
           <Badge type='link' size='sm' rightClass='bg-green-700'>
-            {item.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+            {item.url_host}
           </Badge>
         </a>
         {/if}
