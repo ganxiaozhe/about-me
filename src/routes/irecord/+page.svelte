@@ -241,7 +241,7 @@ bg-black/90 p-8 text-white'>
   <div class='flex flex-col
   text-center text-sm opacity-70 pb-6'>
     <p class='font-medium'>长按图片保存</p>
-    <!-- <p>若在 iOS 下发现图片丢失，重试 1～2 次即可</p> -->
+    <p>若在 iOS 下发现图片丢失，重试 1～2 次即可</p>
   </div>
   <div class='flex justify-center'><img src={posterSrc} alt='分享图片'></div>
 </div>
