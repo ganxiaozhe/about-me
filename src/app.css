@@ -9,24 +9,47 @@
 .border {
 	border-width: 1px;
 	border-style: solid;
-	border-color: oklch(var(--b3));
+	border-color: var(--fallback-border, oklch(var(--bc) / 20%));
 }
 [class*='border-']{
-	border-color: oklch(var(--bc) / 10%);
+	border-color: var(--fallback-border, oklch(var(--bc) / 20%));
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 修改 daisyui */
-:root {
-	/* 降低颜色明度 */
-	--er: 0 80% 40%;
+
+@supports not (color: oklch(0 0 0)) {
+	:root {
+		color-scheme: dark;
+		--fallback-p: #373737;
+		--fallback-s: #373737;
+		--fallback-a: #373737;
+		--fallback-n: #373737;
+		--fallback-b1: #000000;
+		--fallback-b2: #141414;
+		--fallback-b3: #262626;
+		--fallback-bc: #d6d6d6;
+		--fallback-in: #0000ff;
+		--fallback-su: #008000;
+		--fallback-wa: #ffff00;
+		--fallback-er: #ff0000;
+
+		--fallback-pc: #ffffff;
+		--fallback-sc: #ffffff;
+		--fallback-ac: #ffffff;
+		--fallback-nc: #ffffff;
+		--fallback-inc: #ffffff;
+		--fallback-suc: #ffffff;
+		--fallback-wac: #000000;
+		--fallback-erc: #ffffff;
+		--fallback-border: #313131;
+
+		--fallback-app: #b6810d;
+		--fallback-app-c: #f7d300;
+	}
 }
-/* 浅色主题背景色 */
-:root[data-theme='light'] {
-	background-color: hsl(var(--b2));
-}
+
 /* 灯箱 */
 img[data-lightbox] {cursor: pointer;}
 

@@ -1,46 +1,36 @@
 <script lang='ts'>
 	import Seo from "$lib/modules/SEO.svelte";
+
+  import {
+    IconExternalLink
+  } from "@tabler/icons-svelte";
 </script>
 
 <Seo title='小蔗的小窝' />
 
-<div class='h-[100svh] w-full flex items-center justify-center'>
-  <section>
-    <h1 class='text-lg mb-4'>Hello, I'm <a class='underline' href='https://gxzv.com'>Ganxiaozhe</a>.</h1>
 
-    <a href='https://gxzv.com/blog' class='flex items-center gap-1 mb-1 
-    text-sm opacity-80 hover:opacity-100 transition-opacity'>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-        <path d="M12 12m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path>
-        <path d="M15.9 20.11l0 .01"></path>
-        <path d="M19.04 17.61l0 .01"></path>
-        <path d="M20.77 14l0 .01"></path>
-        <path d="M20.77 10l0 .01"></path>
-        <path d="M19.04 6.39l0 .01"></path>
-        <path d="M15.9 3.89l0 .01"></path>
-        <path d="M12 3l0 .01"></path>
-        <path d="M8.1 3.89l0 .01"></path>
-        <path d="M4.96 6.39l0 .01"></path>
-        <path d="M3.23 10l0 .01"></path>
-        <path d="M3.23 14l0 .01"></path>
-        <path d="M4.96 17.61l0 .01"></path>
-        <path d="M8.1 20.11l0 .01"></path>
-        <path d="M12 21l0 .01"></path>
-      </svg>
-      <span>MY BLOG</span>
-    </a>
-    <a href='/resume' class='flex items-center gap-1 
-    text-sm opacity-80 hover:opacity-100 transition-opacity'>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M9.615 20h-2.615a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8"></path>
-        <path d="M14 19l2 2l4 -4"></path>
-        <path d="M9 8h4"></path>
-        <path d="M9 12h2"></path>
-      </svg>
-      <span>MY RESUME</span>
-    </a>
-  </section>
+
+<div class='min-h-[100vh] min-h-[100svh] relative overflow-hidden'>
+  <div class='container mx-auto relative z-[1]'>
+    <div class='py-32 sm:py-40 prose lg:prose-lg text-shadow text-inherit'>
+      <h1 class='text-4xl font-semibold'>你好</h1>
+      <p>我的名字叫「 具诚人 」，在互联网上更为熟知的是「 甘小蔗 」。中国人，居住在「 山城 」重庆。我是一个独来独往的人，大部分时间会避免与社会产生联系。对知识「 贪得无厌 」，想知道世界万物如何运作。软件是我表达自己的媒介。</p>
+
+      <div class='not-prose flex'>
+        <div role="tablist" class="tabs tabs-boxed max-sm:w-full">
+          <a href={null} role="tab" class="tab tab-active">主页</a>
+          <a href='/resume' role="tab" class="tab">简历</a>
+          <a href='https://gxzv.com/' role="tab" class="tab gap-1">
+            博客
+            <IconExternalLink stroke={1.5} size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='absolute z-0
+  -bottom-20 -right-8 sm:right-0'>
+    <img class='w-[80vw] sm:w-[40vw]' src='/images/face_covered.jpg' alt='人像背景'>
+  </div>
 </div>
