@@ -1,5 +1,18 @@
 export const ProjectListData:ProjectItem[] = [
   {
+    id: 'enneatao',
+    title: 'EnneaTao - 人格九道',
+    icon: '/icons/enneatao.png',
+    url: 'https://enneatao.com/',
+    keywords: ['独立项目', '心理健康', 'Serverless', 'Webman', 'Node.js', 'Svelte', 'Redis', 'MySQL'],
+    created_at: '2023-06-01',
+    contents: [
+      {key: '背景', value: '一直以来，传统心理健康服务资源不充足、分布不均衡。同时，Z 时代在焦虑不断下追求共鸣与身份认同。'},
+      {key: '目标', value: '基于消费者当今的底层诉求，即个体去丧，提供超越性的解决方案。'},
+      {key: '行动', value: '基于 Enneagram 理论学说打造数字化产品，帮助人们实现自我探索与身份认同的精神需求。<br/>通过表达性书写等心理治疗技术以及 AI 大模型引导，帮助用户成长、进步与追求希望地自我超越。'},
+    ]
+  },
+  {
     id: 'pagpt',
     title: 'PA GPT - 推文自动化生成工具',
     keywords: ['AIGC', '外包', '客户端', '营销推广', '爬虫', '自动化', 'Python', 'Node.js', 'Svelte'],
