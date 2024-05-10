@@ -71,9 +71,14 @@ flex items-center justify-center'>
     {/if}
     
     {#each searchResult.data as item}
-    <div>
-      <h3 class='text-lg font-semibold'>{item.name}</h3>
-      <p class='text-muted-foreground'>资源添加于 {item.addtime}</p>
+    <div class='flex items-center gap-4'>
+      <div class='grow'>
+        <h3 class='text-lg font-semibold line-clamp-2'>{item.name}</h3>
+        <p class='text-muted-foreground'>资源添加于 {item.addtime}</p>
+      </div>
+      <div class='shrink-0'>
+        <Button href={item.url} target='_blank'>网盘</Button>
+      </div>
     </div>
     {/each}
   </div>
