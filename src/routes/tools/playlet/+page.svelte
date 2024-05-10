@@ -21,7 +21,7 @@
       return;
     }
     searchStarted = true;
-    searchList = undefined;
+    searchResult = undefined;
 
     const json = await query(name);
     searchResult = json;
