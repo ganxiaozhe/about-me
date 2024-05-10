@@ -7,6 +7,12 @@ namespace Playlet {
     number: number;
     url: string;
   }
+
+  interface ApiResult {
+    code:number;
+    count:number;
+    data:Playlet.ApiModel[]
+  }
 }
 
 

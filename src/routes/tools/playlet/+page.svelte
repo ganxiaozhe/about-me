@@ -4,18 +4,25 @@
 
   import { Button } from "$lib/components/ui/button";
   import { Input } from "$lib/components/ui/input";
-  import { Skeleton } from "$lib/components/ui/skeleton";
 	import toast from "svelte-french-toast";
+	import { onMount } from "svelte";
+	import Loading from "./(components)/Loading.svelte";
+	import ListView from "./(components)/ListView.svelte";
 
 
   let searchStarted:boolean = false;
-  let searchResult:undefined|{
-    code:number; count:number; data:Playlet.ApiModel[]
-  };
-  let searchList:Playlet.ApiModel[]|undefined = [];
+  let searchResult:undefined|Playlet.ApiResult;
+  let dailyResult:undefined|Playlet.ApiResult;
+
+  onMount(async()=>{
+    dailyResult = await query();
+  });
+
 
   let name:string = '';
-  async function sumbit(){
+  async function sumbit(e:SubmitEvent){
+    e.preventDefault();
+
     if(!name.trim()){
       toast.error('请先输入剧名');
       return;
@@ -54,45 +61,24 @@ flex items-center justify-center'>
       <Input type="name" bind:value={name} placeholder="剧名" />
       <Button type="submit">搜索</Button>
     </form>
+    {#if !searchStarted}
+    <div class='text-sm text-muted-foreground
+    flex items-center gap-3 mt-1.5 pl-3'>
+      <a href='/' class='hover:opacity-80'>主页</a>
+      <a href='/resume' class='hover:opacity-80'>简历</a>
+      <a href='https://gxzv.com' class='hover:opacity-80'>博客</a>
+    </div>
+    {/if}
   </div>
 </div>
 
 
 <div class='container max-w-xl mx-auto pb-12'>
-{#if searchResult && searchStarted}
-  <div class='flex flex-col gap-4'>
-    <h2 class='text-muted-foreground font-semibold'>{searchResult.count} 条相关结果</h2>
 
-    {#if searchResult.data.length<1}
-    <div class='text-center space-y-2'>
-      <div class='text-4xl'>:(</div>
-      <div class='text-muted-foreground text-sm'>没有找到相关内容，尝试换个关键词 ？</div>
-    </div>
-    {/if}
-    
-    {#each searchResult.data as item}
-    <div class='flex items-center gap-4'>
-      <div class='grow'>
-        <h3 class='text-lg font-semibold line-clamp-2'>{item.name}</h3>
-        <p class='text-muted-foreground'>资源添加于 {item.addtime}</p>
-      </div>
-      <div class='shrink-0'>
-        <Button href={item.url} target='_blank'>网盘</Button>
-      </div>
-    </div>
-    {/each}
-  </div>
-{/if}
-{#if !searchResult && searchStarted}
-  <div class='flex flex-col gap-4'>
-    <div class='space-y-2'>
-      <Skeleton class='h-5' />
-      <Skeleton class='h-5 w-1/3 mt-4' />
-    </div>
-    <div class='space-y-2'>
-      <Skeleton class='h-5' />
-      <Skeleton class='h-5 w-1/3 mt-4' />
-    </div>
-  </div>
-{/if}
+  {#if !searchStarted}
+  <ListView result={dailyResult} title='🆕 最近添加' />
+  {/if}
+
+  <ListView result={searchResult} />
+
 </div>
