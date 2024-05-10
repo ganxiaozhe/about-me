@@ -37,6 +37,6 @@
     {/each}
   </div>
 {/if}
-{#if !result && result}
+{#if !result}
 <Loading />
 {/if}

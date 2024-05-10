@@ -79,6 +79,8 @@ flex items-center justify-center'>
   <ListView result={dailyResult} title='🆕 最近添加' />
   {/if}
 
+  {#if searchStarted}
   <ListView result={searchResult} />
+  {/if}
 
 </div>

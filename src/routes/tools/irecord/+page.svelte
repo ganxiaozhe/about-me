@@ -265,10 +265,13 @@ on:dragenter={e=>{dragEnter = true;}}>
 <div transition:fly={{y:20, duration:400}} class='fixed top-0 left-0 w-full h-full z-10 
 bg-black/90 p-8 text-white'>
   <div class='absolute top-0 right-0'>
-    <button class='btn btn-square btn-ghost' on:click={()=>{
+    <Button variant='ghost' size='icon'
+    class='rounded-none'
+    on:click={()=>{
       posterSrc = '';
-    }}><IconX /></button>
+    }}><IconX /></Button>
   </div>
+
   <div class='flex flex-col
   text-center text-sm opacity-70 pb-6'>
     <p class='font-medium'>长按图片保存</p>
