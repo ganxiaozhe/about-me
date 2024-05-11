@@ -20,12 +20,15 @@ relative overflow-hidden dark:bg-black'>
 
       <div class='not-prose flex mt-8'>
         <Tabs.Root value="home" 
-        class='min-w-[320px] max-sm:w-full'>
-          <Tabs.List class="grid w-full grid-cols-3">
+        class='min-w-[360px] max-sm:w-full'>
+          <Tabs.List class="grid w-full grid-cols-4">
             <Tabs.Trigger value="home">主页</Tabs.Trigger>
             <Tabs.Trigger value="resume" on:click={()=>{
               goto('/resume');
             }}>简历</Tabs.Trigger>
+            <Tabs.Trigger value="tools" on:click={()=>{
+              goto('/tools');
+            }}>工具</Tabs.Trigger>
             <Tabs.Trigger value="blog" on:click={()=>{
               window.location.href = 'https://gxzv.com/'
             }} class='flex gap-1'>

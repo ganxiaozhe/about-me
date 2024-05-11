@@ -48,6 +48,7 @@
 		"dom-to-image": "^2.6.0",
 		"html-to-image": "^1.11.11",
 		"mode-watcher": "^0.3.0",
+		"moment": "^2.30.1",
 		"photoswipe": "^5.4.3",
 		"qrcode": "^1.5.3",
 		"svelte-french-toast": "^1.2.0",

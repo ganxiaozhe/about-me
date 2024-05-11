@@ -63,10 +63,16 @@ flex items-center justify-center'>
     </form>
     {#if !searchStarted}
     <div class='text-sm text-muted-foreground
-    flex items-center gap-3 mt-1.5 pl-3'>
-      <a href='/' class='hover:opacity-80'>主页</a>
-      <a href='/resume' class='hover:opacity-80'>简历</a>
-      <a href='https://gxzv.com' class='hover:opacity-80'>博客</a>
+    flex items-center justify-between gap-3 mt-1.5 pl-3'>
+      <div class='flex items-center gap-3'>
+        <a href='/' class='hover:opacity-80'>主页</a>
+        <a href='/resume' class='hover:opacity-80'>简历</a>
+        <a href='https://gxzv.com' class='hover:opacity-80'>博客</a>
+      </div>
+
+      <div class='flex items-center gap-3'>
+        <a href='https://ys.110t.cn/' target='_blank' class='hover:opacity-80'>数据来源</a>
+      </div>
     </div>
     {/if}
   </div>
