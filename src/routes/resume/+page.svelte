@@ -116,13 +116,14 @@
 
 <Seo title='我的简历' />
 
+
 {#if PI.mode==='web'}
 <div class='max-w-[920px] w-full py-0 sm:px-profile
 flex justify-between bg-card h-12 
 fixed z-20 bottom-0 sm:bottom-[unset] sm:top-6 
 left-1/2 -translate-x-1/2'>
   <div class="flex items-center shrink-0 max-sm:pt-1
-  shadow border gap-4 px-4">
+  shadow sm:border border-r border-t gap-4 px-4">
     {#each Menus as item}
     <a href={item.href||null} on:click={()=>{
       if(item.action==='pdf'){PI.mode = 'pdf';}
@@ -140,7 +141,7 @@ left-1/2 -translate-x-1/2'>
 
   <Marquee class="bg-base-100 dark:bg-base-100 
   flex items-center flex-grow max-sm:pt-1 
-  shadow border border-l-0" 
+  shadow sm:border !border-l-0 border-t" 
   repeat={2} duration={20} gap='0px'>
     {#each Navs as item}
     <a href='#{item.id}' class="btn btn-ghost font-normal
