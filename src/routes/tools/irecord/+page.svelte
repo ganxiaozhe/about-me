@@ -103,6 +103,7 @@
     // 生成两次，防止图片丢失
     if(engine.name==='WebKit'){
       await convertImage();
+      await convertImage();
     }
 
     posterSrc = await convertImage();
@@ -140,11 +141,11 @@ on:dragenter={e=>{dragEnter = true;}}>
   style='padding-top: {recorder.bt}px;padding-bottom: {recorder.bb}px;
   padding-left: {recorder.bl}px;padding-right: {recorder.br}px;
   max-width: calc(100vw - 24px);'>
-    <div class='absolute top-0 left-0 w-full h-[6%] bg-white'
+    <div class='absolute top-0 left-0 w-full h-[8%] bg-white'
     bind:clientHeight={recorder.bt}></div>
-    <div class='absolute top-0 left-0 w-[8%] h-full bg-white'
+    <div class='absolute top-0 left-0 w-[7.5%] h-full bg-white'
     bind:clientWidth={recorder.bl}></div>
-    <div class='absolute top-0 right-0 w-[8%] h-full bg-white'
+    <div class='absolute top-0 right-0 w-[7.5%] h-full bg-white'
     bind:clientWidth={recorder.br}></div>
     <div class='absolute bottom-0 left-0
     bg-white h-[14%] w-full
