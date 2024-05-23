@@ -2,7 +2,20 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [
+		require('@tailwindcss/typography'),
+		function ({ addUtilities }) {
+      const newUtilities = {
+        '.pb-safe': {
+          paddingBottom: 'constant(safe-area-inset-bottom)',
+					// @ts-ignore
+          paddingBottom: 'env(safe-area-inset-bottom)',
+        }
+      };
+
+      addUtilities(newUtilities);
+    }
+	],
 	
 	darkMode: ["class"],
 	content: ["./src/**/*.{html,js,svelte,ts}"],

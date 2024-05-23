@@ -25,6 +25,7 @@
 	import type { ComponentType } from "svelte";
 	import {Button} from "$lib/components/ui/button";
 	import toast from "svelte-french-toast";
+	import { UAParser } from "ua-parser-js";
 	export let data:PageData;
 
   const PI = {
@@ -59,7 +60,7 @@
     action?: string;
     smHidden?: boolean;
   }[] = [
-    {icon: IconHome, title:'主页', tip:'主页', href:'/', smHidden:true},
+    {icon: IconHome, title:'主页', tip:'主页', href:'/', smHidden:false},
     {icon: IconFileTypePdf, title:'PDF', tip:'PDF 模式', action:'pdf'},
     {icon: IconReceipt, title:'佐证', tip:'查看佐证', href:'/resume/support'},
     {icon: IconShare, title:'分享', tip:'分享', action:'share'},
@@ -112,6 +113,14 @@
     clearTimeout(PI.shareTimer);
     PI.shareTimer = setTimeout(()=>{PI.shareTip = '分享';}, 1500);
   }
+
+  // 判断浏览器
+  let isIPhone = false;
+  if(browser){
+    const parser = new UAParser(window.navigator.userAgent);
+    const d = parser.getDevice();
+    isIPhone = d.model?.toLowerCase()==="iphone";
+  }
 </script>
 
 <Seo title='我的简历' />
@@ -119,11 +128,11 @@
 
 {#if PI.mode==='web'}
 <div class='max-w-[920px] w-full py-0 sm:px-profile
-flex justify-between bg-card h-12 
+flex justify-between bg-card max-sm:pb-1 sm:h-12 
 fixed z-20 bottom-0 sm:bottom-[unset] sm:top-6 
 left-1/2 -translate-x-1/2'>
-  <div class="flex items-center shrink-0 max-sm:pt-1
-  shadow sm:border border-r border-t gap-4 px-4">
+  <div class="flex items-center shrink-0 max-sm:py-1.5
+  shadow sm:border border-r border-t gap-4 px-4 max-sm:pb-safe">
     {#each Menus as item}
     <a href={item.href||null} on:click={()=>{
       if(item.action==='pdf'){PI.mode = 'pdf';}
@@ -140,13 +149,14 @@ left-1/2 -translate-x-1/2'>
   </div>
 
   <Marquee class="bg-base-100 dark:bg-base-100 
-  flex items-center flex-grow max-sm:pt-1 
+  flex items-center flex-grow 
   shadow sm:border !border-l-0 border-t" 
   repeat={2} duration={20} gap='0px'>
     {#each Navs as item}
     <a href='#{item.id}' class="btn btn-ghost font-normal
     flex max-sm:flex-col items-center 
-    gap-1 mx-2 hover:opacity-85">
+    gap-1 mx-2 hover:opacity-85 
+    max-sm:py-1.5 max-sm:pb-safe">
       <svelte:component this={item.icon} class='w-5 h-5' />
       <span class='text-sm max-sm:text-xs'>{item.title}</span>
     </a>
