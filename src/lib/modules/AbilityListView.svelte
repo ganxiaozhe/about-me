@@ -1,5 +1,6 @@
 <script lang='ts'>
   const AbilityList:{type:string, content:string}[] = [
+    {type:'serverless', content:"熟悉 Serverless 架构，能熟练使用 Cloudflare Workers 进行应用开发，以及 Zeabur 部署服务。"},
     {type:'dev', content:"理解面向对象基本原理，能熟练使用 Node.js、PHP 进行系统及架构开发设计，可以使用 Java、Python 进行系统开发，了解 Rust、C / CPP。"},
     {type:'web-devices', content:"熟练使用 WEB 大前端相关技术，能够从头创建自适应界面，能通过 JavaScript 进行工程化开发设计，能借助 Electron、NW.js、uni-app 及 Flutter 进行跨平台系统应用开发工作。"},
     {type:'api', content:"对应用程序接口 API / SDK 有深入理解，能快速完成 API 设计、开发、测试及部署这一整套流程。"},
@@ -14,8 +15,11 @@
 
 <ul class='px-profile space-y-2 text-sm xs:text-base'>
   {#each AbilityList as ability}
-  <li class='flex gap-2 items-start'>
+  <li class='flex gap-2 items-start leading-[24px]'>
     <div class='shrink-0 w-7 opacity-80'>
+      {#if ability.type==='serverless'}
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-world"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M3.6 9h16.8" /><path d="M3.6 15h16.8" /><path d="M11.5 3a17 17 0 0 0 0 18" /><path d="M12.5 3a17 17 0 0 1 0 18" /></svg>
+      {/if}
       {#if ability.type==='dev'}
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
