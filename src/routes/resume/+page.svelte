@@ -22,17 +22,20 @@
 
 	import type { PageData } from "./$types";
 	import Marquee from "$lib/components/Marquee.svelte";
-	import type { ComponentType } from "svelte";
+	import { onMount, type ComponentType } from "svelte";
+  import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 	import {Button} from "$lib/components/ui/button";
 	import toast from "svelte-french-toast";
 	import { UAParser } from "ua-parser-js";
+	import Translater from "$lib/modules/Translater.svelte";
 	export let data:PageData;
 
   const PI = {
     mode: data.mode,
     shareTip: '分享',
     shareTimer: setTimeout(()=>{}),
-    employmentShow: false
+    employmentShow: false,
+    language: data.language
   };
 
   const Profile:Profile = {
@@ -121,9 +124,18 @@
     const d = parser.getDevice();
     isIPhone = d.model?.toLowerCase()==="iphone";
   }
+
+
+  // 请求语言
+  let languages:{id:string, name:string, serviceId:string}[] = [];
+  // onMount(async ()=>{
+  //   let data = (await fetch('https://api.translate.zvo.cn/language.json').then(rsp=>rsp.json()));
+  //   languages = data.list;
+  // });
 </script>
 
 <Seo title='我的简历' />
+<Translater bind:language={PI.language} />
 
 
 {#if PI.mode==='web'}
@@ -169,13 +181,34 @@ left-1/2 -translate-x-1/2'>
 <div class='profile-{PI.mode} grid-pattern min-h-screen pb-12 sm:py-24' class:!py-0={PI.mode==='pdf'}>
   <div class='max-w-[920px] relative mx-auto 
   bg-card shadow-lg' class:max-w-none={PI.mode==='pdf'}>
-    <div class='absolute top-0 right-0'>
+    <div class='absolute top-0 right-0
+    flex items-center'>
+      <!-- {#if languages.length>1} -->
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild let:builder>
+          <Button variant='ghost' class='rounded-none' builders={[builder]}>Language</Button>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Content class="w-56 max-h-96 overflow-auto">
+          <DropdownMenu.Label>切换语言</DropdownMenu.Label>
+          <DropdownMenu.Separator />
+          <DropdownMenu.RadioGroup bind:value={PI.language}>
+            <!-- {#each languages as item}
+            <DropdownMenu.RadioItem value={item.id}>{item.name}</DropdownMenu.RadioItem>
+            {/each} -->
+            <DropdownMenu.RadioItem value="chinese_simplified">简体中文</DropdownMenu.RadioItem>
+            <DropdownMenu.RadioItem value="english">English</DropdownMenu.RadioItem>
+          </DropdownMenu.RadioGroup>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
+      <!-- {/if} -->
+
       {#if PI.mode==='pdf'}
-      <button on:click={()=>{
+      <Button variant='ghost' class='rounded-none'
+      on:click={()=>{
         PI.mode = 'web';
-      }} class='tooltip tooltip-left inline-flex btn btn-square' data-tip='WEB 模式'>
+      }}>
         <IconFileTypeHtml />
-      </button>
+      </Button>
       {/if}
     </div>
     <section class='p-profile'>

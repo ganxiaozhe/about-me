@@ -43,7 +43,6 @@
 <Analytics />
 {/if}
 
-
 <Toaster />
 <ModeWatcher />
 <slot />

@@ -8,6 +8,7 @@ export async function load({ params, url }) {
 
 	return {
     mode,
-    phone: url.searchParams.get('phone')
+    phone: url.searchParams.get('phone'),
+    language: url.searchParams.get('lang') || 'chinese_simplified'
   };
 }

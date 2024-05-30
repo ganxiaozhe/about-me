@@ -195,7 +195,7 @@ flex items-center justify-center z-20">
   <ol class='px-profile pt-3 leading-relaxed text-sm xs:text-base'>
     {#each item.contents as content(content.key)}
     <li class='flex'>
-      <div class='font-semibold w-16 shrink-0'>{content.key}：</div>
+      <div class='font-semibold w-16 shrink-0 break-all pr-1'>{content.key}：</div>
       <div>{@html content.value}</div>
     </li>
     {/each}

@@ -24,7 +24,7 @@
 
 {#each SkillList as item}
 <section class='flex items-start px-profile'>
-  <div class='font-semibold w-16 shrink-0'>{item.name}</div>
+  <div class='font-semibold w-16 shrink-0 break-all pr-1'>{item.name}</div>
   <ul class='flex flex-col gap-2'>
     {#each item.items as skill}
     <li class='flex flex-wrap items-center gap-2'>
