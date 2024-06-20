@@ -1,5 +1,17 @@
 export const ProjectListData:ProjectItem[] = [
   {
+    id: 'svelte-chat-dev',
+    title: 'Svelte Chat Dev',
+    url: 'https://chatdev.gxzv.com/apps/chat?code=resumeg0Z2',
+    keywords: ['Serverless', '自研框架', 'Node.js', 'Svelte', 'AI'],
+    created_at: '2023-06-09',
+    contents: [
+      {key: '背景', value: '这是一个正在开发中的项目。'},
+      {key: '目标', value: '用于人工智能应用开发的 TypeScript 框架，致力于构建 AI-powered 超级生产力工具。'},
+      {key: '行动', value: '采用模块化设计，分为 Chat layer、Agents layer、Tools layer、Plugins layer、Data layer、Docs layer 以及应用层。<br/>当前基于流式语音合成技术，初步实现了实时对话功能。'},
+    ]
+  },
+  {
     id: 'enneatao',
     title: 'EnneaTao - 人格九道',
     icon: '/icons/enneatao.png',
@@ -8,7 +20,7 @@ export const ProjectListData:ProjectItem[] = [
     created_at: '2023-06-01',
     contents: [
       {key: '背景', value: '一直以来，传统心理健康服务资源不充足、分布不均衡。同时，Z 时代在焦虑不断下追求共鸣与身份认同。'},
-      {key: '目标', value: '基于消费者当今的底层诉求，即个体去丧，提供超越性的解决方案。'},
+      {key: '目标', value: '基于消费者当今的底层诉求，即个体去丧，提供超越性的解决方案，帮助人们更好地了解自己。'},
       {key: '行动', value: '基于 Enneagram 理论学说打造数字化产品，帮助人们实现自我探索与身份认同的精神需求。<br/>通过表达性书写等心理治疗技术以及 AI 大模型引导，帮助用户成长、进步与追求希望地自我超越。'},
     ]
   },

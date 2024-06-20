@@ -251,7 +251,10 @@ left-1/2 -translate-x-1/2'>
       </div>
 
       <div class='flex flex-col gap-5'>
-        {#if PI.mode!=='pdf' && !PI.employmentShow}
+        <article class='p-profile !py-0'>
+          <p>最早是 18 年前后自己接 Web 方面的外包，20 年初开了个网络技术工作室，21 年底注册了家科技公司，亲力亲为。期间也在其他初创公司任职过 CTO，擅长从 0 到 1 架构并开发软件产品、产品设计和成本优化等，能独挡一面。</p>
+        </article>
+        <!-- {#if PI.mode!=='pdf' && !PI.employmentShow}
         <div class='p-profile !py-0'>
           <Button class='w-full gap-2' variant='outline' size='lg'
           on:click={()=>{
@@ -263,7 +266,7 @@ left-1/2 -translate-x-1/2'>
         </div>
         {:else}
         <EmploymentListView {EmploymentList} />
-        {/if}
+        {/if} -->
       </div>
     </section>
 
