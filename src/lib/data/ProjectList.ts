@@ -12,7 +12,7 @@ export const ProjectListData:ProjectItem[] = [
     ]
   },
   {
-    id: 'enneatao',
+    id: 'enneatao', priority: 1,
     title: 'EnneaTao - 人格九道',
     icon: '/icons/enneatao.png',
     url: 'https://enneatao.com/',
@@ -356,4 +356,4 @@ export const ProjectListData:ProjectItem[] = [
       {key: '行动', value: '程序通过 Node.js 开发，依靠 Nightmare 模拟用户操作以规避严格的反爬策略。'}
     ]
   }
-];
+].sort((a,b)=>(b?.priority||0) - (a?.priority||0)) as ProjectItem[];

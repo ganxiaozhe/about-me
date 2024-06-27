@@ -8,7 +8,7 @@ const config: Config = {
       const newUtilities = {
         '.pb-safe': {
           paddingBottom: 'constant(safe-area-inset-bottom)',
-					// @ts-ignore
+					// @ts-expect-error 兼容需要
           paddingBottom: 'env(safe-area-inset-bottom)',
         }
       };

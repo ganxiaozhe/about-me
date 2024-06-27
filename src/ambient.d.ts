@@ -55,6 +55,7 @@ interface EmploymentItem {
 
 interface ProjectItem {
   id: string;
+  priority?: number;
   dom_class?: string;
   title: string;
   icon?: string;

@@ -1,5 +1,5 @@
 <script lang='ts'>
-  export let type:string = 'default';
+  export let type:string = '';
   export let icon:string = '';
   export let iconClass:string = '';
   export let rightClass:string = 'bg-neutral';
@@ -8,6 +8,7 @@
 
 
 <div class='badge-item bg-muted/50 {size}'>
+  {#if type || icon}
   <div class='bg-muted'>
     {#if type==='gender'}
     <svg xmlns="http://www.w3.org/2000/svg" class="badge-icon {iconClass}" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -60,10 +61,11 @@
     </svg>
     {/if}
 
-    {#if type==='default'}
+    {#if type===''}
       <span class={iconClass}>{icon}</span>
     {/if}
   </div>
+  {/if}
 
   <div class='{rightClass} min-w-[30px] 
   text-white'>

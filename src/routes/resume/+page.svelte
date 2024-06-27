@@ -135,7 +135,7 @@
 </script>
 
 <Seo title='我的简历' />
-<Translater bind:language={PI.language} />
+<!-- <Translater bind:language={PI.language} /> -->
 
 
 {#if PI.mode==='web'}
@@ -196,7 +196,7 @@ left-1/2 -translate-x-1/2'>
             <DropdownMenu.RadioItem value={item.id}>{item.name}</DropdownMenu.RadioItem>
             {/each} -->
             <DropdownMenu.RadioItem value="chinese_simplified">简体中文</DropdownMenu.RadioItem>
-            <DropdownMenu.RadioItem value="english">English</DropdownMenu.RadioItem>
+            <!-- <DropdownMenu.RadioItem value="english">English</DropdownMenu.RadioItem> -->
           </DropdownMenu.RadioGroup>
         </DropdownMenu.Content>
       </DropdownMenu.Root>

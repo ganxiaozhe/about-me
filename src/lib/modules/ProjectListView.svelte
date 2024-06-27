@@ -145,7 +145,7 @@ flex items-center justify-center z-20">
 
 <div class='flex flex-col gap-5'>
 {#each ProjectList.filter(proj => PI.filters.length>0 ? PI.filters.some(k=>proj.keywords.includes(k)) : true ) as item(item.title)}
-<section class='item group pb-3 {item.dom_class||''}'>
+<section class='item group pb-3 {item.dom_class||""}'>
   {#if item.owned_by}
   <div class="bg-green-600/10 px-profile py-2 mb-3
   flex gap-4 text-sm sm:text-base">
@@ -167,7 +167,12 @@ flex items-center justify-center z-20">
       <Avatar.Fallback class='rounded-none'>{item.title[0]}</Avatar.Fallback>
     </Avatar.Root>
     <div class='flex flex-col justify-center'>
-      <h3 class='font-semibold leading-none mt-1'>{item.title}</h3>
+      <div class='flex items-center gap-2 mt-1'>
+        {#if item.priority}
+        <Badge rightClass='bg-white text-black'>置顶</Badge>
+        {/if}
+        <h3 class='font-semibold leading-none'>{item.title}</h3>
+      </div>
       <div class='flex flex-wrap mt-2 gap-2'>
         <Badge icon='关键词' size='sm' rightClass='bg-green-700'>
           {item.keywords.join(', ')}
