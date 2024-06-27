@@ -169,7 +169,7 @@ flex items-center justify-center z-20">
     <div class='flex flex-col justify-center'>
       <div class='flex items-center gap-2 mt-1'>
         {#if item.priority}
-        <Badge rightClass='bg-white text-black'>置顶</Badge>
+        <Badge rightClass='!bg-white !text-black'>置顶</Badge>
         {/if}
         <h3 class='font-semibold leading-none'>{item.title}</h3>
       </div>

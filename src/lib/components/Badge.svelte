@@ -67,8 +67,7 @@
   </div>
   {/if}
 
-  <div class='{rightClass} min-w-[30px] 
-  text-white'>
+  <div class='text-white min-w-[30px] {rightClass}'>
     <slot />
   </div>
 </div>
