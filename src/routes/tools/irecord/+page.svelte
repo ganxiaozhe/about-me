@@ -16,7 +16,7 @@
   import { Input } from "$lib/components/ui/input";
 
   const recorder = {
-    imgSrc: '', imgAlt: 'iRecord', imgHandling: false,
+    imgSrc: '', imgAlt: 'invert(1)', imgHandling: false,
     domWidth: 0, domHeight: 0,
     width: 416, height: 512, sizeLock: false,
     w1:0, h1:0,
@@ -158,7 +158,7 @@ on:dragenter={e=>{dragEnter = true;}}>
     </div>
 
     {#if recorder.imgSrc}
-    <img class='w-full h-full object-cover' 
+    <img class='w-full h-full object-cover invert' 
     src={recorder.imgSrc} alt='图像' />
     {:else}
       {#if recorder.imgHandling}
