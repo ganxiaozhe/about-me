@@ -16,7 +16,7 @@
   import { Input } from "$lib/components/ui/input";
 
   const recorder = {
-    imgSrc: '', imgAlt: 'invert(1)', imgHandling: false,
+    imgSrc: '', imgAlt: 'iRecord', imgHandling: false,
     domWidth: 0, domHeight: 0,
     width: 416, height: 512, sizeLock: false,
     w1:0, h1:0,
@@ -141,14 +141,14 @@ on:dragenter={e=>{dragEnter = true;}}>
   style='padding-top: {recorder.bt}px;padding-bottom: {recorder.bb}px;
   padding-left: {recorder.bl}px;padding-right: {recorder.br}px;
   max-width: calc(100vw - 24px);'>
-    <div class='absolute top-0 left-0 w-full h-[8%] bg-white'
+    <div class='absolute top-0 left-0 w-full h-[8%] max-h-[50px] bg-white'
     bind:clientHeight={recorder.bt}></div>
     <div class='absolute top-0 left-0 w-[7.5%] h-full bg-white'
     bind:clientWidth={recorder.bl}></div>
     <div class='absolute top-0 right-0 w-[7.5%] h-full bg-white'
     bind:clientWidth={recorder.br}></div>
     <div class='absolute bottom-0 left-0
-    bg-white h-[14%] w-full
+    bg-white h-[14%] max-h-[88px] w-full
     flex items-center justify-center
     text-black/90 font-semibold
     whitespace-pre text-center'
@@ -158,7 +158,7 @@ on:dragenter={e=>{dragEnter = true;}}>
     </div>
 
     {#if recorder.imgSrc}
-    <img class='w-full h-full object-cover invert' 
+    <img class='w-full h-full object-cover' 
     src={recorder.imgSrc} alt='图像' />
     {:else}
       {#if recorder.imgHandling}
