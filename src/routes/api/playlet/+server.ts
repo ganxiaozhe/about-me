@@ -11,13 +11,13 @@ export async function GET({ url }) {
 
 
 async function getDaily() {
-  const resp = await fetch('https://ys.110t.cn/api/ajax.php?act=Daily');
+  const resp = await fetch('https://ys.110t.cn/api/ajax.php?act=yingshilist');
   return await resp.json();
 }
 
 // yingshilist
 async function search(name:string) {
-  let url = new URL('https://ys.110t.cn/api/ajax.php');
+  const url = new URL('https://ys.110t.cn/api/ajax.php');
   url.searchParams.append('act', 'search');
   url.searchParams.append('name', name);
 
