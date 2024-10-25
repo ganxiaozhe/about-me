@@ -9,16 +9,16 @@
 	import Seo from "$lib/modules/SEO.svelte";
 	import SkillListView from "$lib/modules/SkillListView.svelte";
 
-  import IconFileTypePdf from '@tabler/icons-svelte/IconFileTypePdf.svelte';
-  import IconHome from '@tabler/icons-svelte/IconHome.svelte';
-  import IconReceipt from '@tabler/icons-svelte/IconReceipt.svelte';
-  import IconShare from '@tabler/icons-svelte/IconShare.svelte';
-  import IconFileTypeHtml from '@tabler/icons-svelte/IconFileTypeHtml.svelte';
-  import IconBuildingEstate from '@tabler/icons-svelte/IconBuildingEstate.svelte';
-  import IconStereoGlasses from '@tabler/icons-svelte/IconStereoGlasses.svelte';
-  import IconMicroscope from '@tabler/icons-svelte/IconMicroscope.svelte';
-  import IconAccessible from '@tabler/icons-svelte/IconAccessible.svelte';
-  import IconTools from '@tabler/icons-svelte/IconTools.svelte';
+  import IconFileTypePdf from '@tabler/icons-svelte/icons/file-type-pdf';
+  import IconHome from '@tabler/icons-svelte/icons/home';
+  import IconReceipt from '@tabler/icons-svelte/icons/receipt';
+  import IconShare from '@tabler/icons-svelte/icons/share';
+  import IconFileTypeHtml from '@tabler/icons-svelte/icons/file-type-html';
+  import IconBuildingEstate from '@tabler/icons-svelte/icons/building-estate';
+  import IconStereoGlasses from '@tabler/icons-svelte/icons/stereo-glasses';
+  import IconMicroscope from '@tabler/icons-svelte/icons/microscope';
+  import IconAccessible from '@tabler/icons-svelte/icons/accessible';
+  import IconTools from '@tabler/icons-svelte/icons/tools';
 
 	import type { PageData } from "./$types";
 	import Marquee from "$lib/components/Marquee.svelte";

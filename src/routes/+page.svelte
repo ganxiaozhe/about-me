@@ -3,7 +3,7 @@
 
   import * as Tabs from "$lib/components/ui/tabs/index.js";
 
-  import IconExternalLink from "@tabler/icons-svelte/IconExternalLink.svelte";
+  import IconExternalLink from "@tabler/icons-svelte/icons/external-link";
 	import { goto } from "$app/navigation";
 </script>
 

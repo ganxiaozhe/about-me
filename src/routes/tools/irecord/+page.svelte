@@ -2,9 +2,9 @@
 	import Seo from "$lib/modules/SEO.svelte";
   import { fade, fly } from "svelte/transition";
 
-  import IconPhotoUp from "@tabler/icons-svelte/IconPhotoUp.svelte";
-  import IconFileUpload from "@tabler/icons-svelte/IconFileUpload.svelte";
-  import IconX from "@tabler/icons-svelte/IconX.svelte";
+  import IconPhotoUp from "@tabler/icons-svelte/icons/photo-up";
+  import IconFileUpload from "@tabler/icons-svelte/icons/file-upload";
+  import IconX from "@tabler/icons-svelte/icons/x";
 
   import domtoimage from 'dom-to-image';
   import { toPng } from 'html-to-image';
