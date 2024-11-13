@@ -1,6 +1,19 @@
 export const ProjectListData:ProjectItem[] = [
   {
     id: 'svelte-chat-dev',
+    title: '边缘苗圃 - Edge Nursery',
+    url: 'https://edgenursery.com/',
+    keywords: ['智慧农业', '物联网', 'Serverless', 'Node.js', 'Svelte', 'AI'],
+    created_at: '2024-04-23',
+    contents: [
+      {key: '背景', value: '现有智慧农业系统面临两大主要挑战：集中式云平台架构难以应对海量设备数据，导致性能问题和高成本；系统模块高度耦合、界面兼容性差，加上农民技术水平有限，影响决策效率和生产计划执行。'},
+      {key: '目标', value: '基于 Serverless 实现 AIoT 平台，通过边缘计算和 AI 技术，实现设备数据的高效处理和实时分析，降低成本并提高决策效率。'},
+      {key: '行动', value: 'Cloudflare Pub/Sub、Cloudflare Workers&Pages、Cloudflare R2、Timescale Cloud、Anthropic Claude 3'},
+      {key: '结果', value: '系统通过边缘计算解决了海量数据承载局限性、成本高昂、可扩展性低等痛点；通过数字模型可智能调度设备，保证植株处于最佳环境，并自动处理已知风险。同时，借助强大的 LLMs 模型，可自动处理未知风险，并助力人员管理。'}
+    ]
+  },
+  {
+    id: 'svelte-chat-dev',
     title: 'Svelte Chat Dev',
     url: 'https://chatdev.gxzv.com/apps/chat?code=resumeg0Z2',
     keywords: ['Serverless', '自研框架', 'Node.js', 'Svelte', 'AI'],
