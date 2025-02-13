@@ -8,6 +8,7 @@
 <script lang="ts">
 	import Seo from '$lib/modules/SEO.svelte';
   import { onMount, onDestroy } from 'svelte';
+	import toast from 'svelte-french-toast';
 
   let amount = '0';
   let interval: any;
@@ -43,18 +44,18 @@
 
   // 处理确认
   function handleConfirm() {
-    alert(`确认转账金额：${amount}元`);
+    toast.success(`确认转账金额 ¥${Number(amount).toFixed(2)}`);
   }
 
   // 随机变动数字效果
   function startRandomEffect() {
     // 定义权重数组
-    const weights = [5, 4, 3, 2, 1, 1, 1, 1, 1, 1];
+    const weights = [10, 10, 8, 6, 4, 1, 1, 1, 1, 1];
     // 展开权重数组生成带权重的数字池
     const numberPool = weights.flatMap((weight, number) => 
       Array(weight).fill(number)
     );
-    const specialChars = ['.', '←', '.', '←'];
+    const specialChars = ['.', '←', '.', '←', '←', '←'];
     // 将特殊字符也加入随机池中
     const fullPool = [...numberPool, ...specialChars];
     console.log(`fullPool:`, fullPool);
@@ -94,20 +95,22 @@ flex justify-center items-center
     </div>
 
     <!-- 数字键盘 -->
-    <div class="p-4">
-      <div class="grid grid-cols-3 gap-4">
+    <div class="">
+      <div class="grid grid-cols-3 border-l border-t border-gray-200">
         {#each buttonValues as value}
           {#if value === '←'}
             <button 
-              class="text-black bg-gray-100 hover:bg-gray-200 p-4 rounded-lg text-xl font-semibold"
+              class="text-black hover:bg-gray-100 p-4 py-6 text-xl font-semibold 
+              border-b border-r border-gray-200"
               on:click={handleDelete}
             >
               {value}
             </button>
           {:else}
             <button 
-              class="number-btn text-black bg-gray-100 hover:bg-gray-200 
-              p-4 rounded-lg text-xl font-semibold"
+              class="number-btn text-black hover:bg-gray-100 
+              p-4 py-6 text-xl font-semibold 
+              border-b border-r border-gray-200"
               on:click={() => handleInput(value.toString())}
             >
               {value}
@@ -116,13 +119,14 @@ flex justify-center items-center
         {/each}
 
         <button 
-          class="col-span-1 text-black bg-gray-100 hover:bg-gray-200 p-4 rounded-lg text-xl font-semibold"
+          class="col-span-1 text-black bg-gray-100 hover:bg-gray-200 p-4 text-xl font-semibold
+          border-r border-gray-200"
           on:click={handleClear}
         >
           清空
         </button>
         <button 
-          class="col-span-2 bg-red-500 hover:bg-red-600 p-4 rounded-lg text-xl font-semibold text-white"
+          class="col-span-2 bg-red-500 hover:bg-red-600 p-4 text-xl font-semibold text-white"
           on:click={handleConfirm}
         >
           确认
