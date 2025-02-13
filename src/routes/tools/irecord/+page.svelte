@@ -31,7 +31,7 @@
 
 
 
-  let files:FileList;
+  let files: FileList|undefined;
   $: if(files){
     for (const file of files) {fileHandler(file);}
   }
