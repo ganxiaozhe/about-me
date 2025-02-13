@@ -37,6 +37,10 @@
     }
   }
 
+  function handleClear() {
+    amount = '0';
+  }
+
   // 处理确认
   function handleConfirm() {
     alert(`确认转账金额：${amount}元`);
@@ -45,29 +49,26 @@
   // 随机变动数字效果
   function startRandomEffect() {
     // 定义权重数组
-    const weights = [9, 8, 7, 6, 5, 1, 1, 1, 1, 1];
+    const weights = [5, 4, 3, 2, 1, 1, 1, 1, 1, 1];
     // 展开权重数组生成带权重的数字池
     const numberPool = weights.flatMap((weight, number) => 
       Array(weight).fill(number)
     );
-    const specialChars = ['.', '←'];
-    console.log(`numberPool:`, numberPool);
+    const specialChars = ['.', '←', '.', '←'];
+    // 将特殊字符也加入随机池中
+    const fullPool = [...numberPool, ...specialChars];
+    console.log(`fullPool:`, fullPool);
 
     interval = setInterval(() => {
       buttonValues = buttonValues.map((value) => {
         if (Math.random() > 0.7) { // 30%的概率变化
-          if (specialChars.includes(value as string)) {
-            // 特殊字符在自己和其他特殊字符之间随机切换
-            return specialChars[Math.floor(Math.random() * specialChars.length)];
-          } else {
-            // 数字从带权重的数字池中随机选择
-            const randomIndex = Math.floor(Math.random() * numberPool.length);
-            return numberPool[randomIndex];
-          }
+          // 从完整的随机池中选择一个值
+          const randomIndex = Math.floor(Math.random() * fullPool.length);
+          return fullPool[randomIndex];
         }
         return value;
       });
-    }, 200);
+    }, 300);
   }
 
   onMount(() => {
@@ -113,8 +114,15 @@ flex justify-center items-center
             </button>
           {/if}
         {/each}
+
         <button 
-          class="col-span-3 bg-red-500 hover:bg-red-600 p-4 rounded-lg text-xl font-semibold text-white"
+          class="col-span-1 text-black bg-gray-100 hover:bg-gray-200 p-4 rounded-lg text-xl font-semibold"
+          on:click={handleClear}
+        >
+          清空
+        </button>
+        <button 
+          class="col-span-2 bg-red-500 hover:bg-red-600 p-4 rounded-lg text-xl font-semibold text-white"
           on:click={handleConfirm}
         >
           确认
