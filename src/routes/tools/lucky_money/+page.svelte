@@ -11,13 +11,19 @@
 	import toast from 'svelte-french-toast';
 
   let amount = '0';
+  let inputCount = 0;
   let interval: any;
   let buttonValues: (number | string)[] = [...Array(9).fill(0).map((_, i) => i + 1), '.', 0, '←'];
 
   // 处理数字输入
   function handleInput(value: string) {
+    // 检查第一次输入（百位）时的数字限制
     if (amount === '0' && value !== '.') {
+      if (inputCount === 0 && Number(value) > 5) {
+        return; // 如果是第一次输入且数字大于5，则忽略此次输入
+      }
       amount = value;
+      inputCount++;
     } else {
       // 处理小数点
       if (value === '.' && amount.includes('.')) return;
@@ -25,21 +31,29 @@
         amount = '0.';
       } else {
         amount += value;
+        if (value !== '.') {
+          inputCount++;
+        }
       }
     }
+
+    console.log(`inputCount:`, inputCount);
   }
 
   // 处理删除
   function handleDelete() {
     if (amount.length === 1) {
       amount = '0';
+      inputCount = 0;
     } else {
       amount = amount.slice(0, -1);
+      inputCount = Math.max(0, inputCount - 1);
     }
   }
 
   function handleClear() {
     amount = '0';
+    inputCount = 0;
   }
 
   // 处理确认
@@ -50,22 +64,33 @@
   // 随机变动数字效果
   function startRandomEffect() {
     // 定义权重数组
-    const weights = [10, 10, 8, 6, 4, 1, 1, 1, 1, 1];
+    const weights = [15, 30, 10, 6, 4, 1, 1, 1, 1, 1];
     // 展开权重数组生成带权重的数字池
     const numberPool = weights.flatMap((weight, number) => 
       Array(weight).fill(number)
     );
-    const specialChars = ['.', '←', '.', '←', '←', '←'];
+    const specialChars = [
+      '.', '←', '.', '←',
+      '←', '←', '←', '←'
+    ];
     // 将特殊字符也加入随机池中
     const fullPool = [...numberPool, ...specialChars];
     console.log(`fullPool:`, fullPool);
 
     interval = setInterval(() => {
+      // 在首次输入时排除大于 5 的数字
+      let pool = [...fullPool];
+      if (inputCount < 1) {
+        pool = pool.filter(num => (
+          isNaN(Number(num)) || Number(num) <= 5
+        ));
+      }
+
       buttonValues = buttonValues.map((value) => {
-        if (Math.random() > 0.7) { // 30%的概率变化
+        if (Math.random() > 0.7) { // 30% 的概率变化
           // 从完整的随机池中选择一个值
-          const randomIndex = Math.floor(Math.random() * fullPool.length);
-          return fullPool[randomIndex];
+          const randomIndex = Math.floor(Math.random() * pool.length);
+          return pool[randomIndex];
         }
         return value;
       });
