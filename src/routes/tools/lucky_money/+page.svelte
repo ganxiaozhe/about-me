@@ -131,3 +131,9 @@ flex justify-center items-center
     </div>
   </div>
 </div>
+
+<style>
+  button {
+    touch-action: manipulation;
+  }
+</style>
