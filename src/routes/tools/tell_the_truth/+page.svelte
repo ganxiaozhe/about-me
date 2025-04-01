@@ -16,6 +16,7 @@
     LowIntensityQuestions, 
     MediumHighIntensityQuestions, 
     SexHighIntensityQuestions, 
+    HypotheticalQuestions,
     type Question 
   } from "./questions";
 
@@ -23,7 +24,8 @@
     ...LowIntensityQuestions,
     ...MediumHighIntensityQuestions,
     ...SexHighIntensityQuestions,
-    ...HumanHighIntensityQuestions
+    ...HumanHighIntensityQuestions,
+		...HypotheticalQuestions
   ];
 
   let counter = 0;
@@ -80,7 +82,7 @@
 	let excludedCategories: string[] = [];
 	let selectedTags: string[] = [];
 	let excludedTags: string[] = [];
-	let intensityLevel = [5];
+	let intensityLevel = [6];
 	
 	// 当前显示的题目
 	let currentQuestion: typeof questions[0] | null = null;
