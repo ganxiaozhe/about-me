@@ -17,7 +17,13 @@
       url: '/tools/irecord',
       created_at: '2024-02-18T18:40:00+08:00'
     },
-  ];
+    {
+      title: 'Tell the Truth',
+      description: '真心话大冒险，快速破冰，刺激有趣',
+      url: '/tools/tell_the_truth',
+      created_at: '2025-04-02T02:00:00+08:00'
+    },
+  ].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 </script>
 
 <Seo title='在线工具' />
