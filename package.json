@@ -2,9 +2,6 @@
   "name": "about-me",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "20.19.0"
-  },
   "scripts": {
     "dev": "vite dev --port=5177",
     "build": "vite build",
@@ -16,7 +13,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.3.0",
-    "@sveltejs/adapter-cloudflare": "^4.7.3",
+    "@sveltejs/adapter-cloudflare": "^6.0.1",
     "@sveltejs/kit": "^2.7.2",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tailwindcss/typography": "^0.5.15",

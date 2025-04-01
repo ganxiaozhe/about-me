@@ -1,6 +1,6 @@
 // import adapter from '@sveltejs/adapter-auto';
-// import adapter from '@sveltejs/adapter-cloudflare';
-import adapter from '@zeabur/svelte-adapter';
+import adapter from '@sveltejs/adapter-cloudflare';
+// import adapter from '@zeabur/svelte-adapter';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 import { mdsvex } from 'mdsvex';
