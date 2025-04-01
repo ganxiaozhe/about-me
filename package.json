@@ -2,6 +2,9 @@
   "name": "about-me",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.10.0"
+  },
   "scripts": {
     "dev": "vite dev --port=5177",
     "build": "vite build",

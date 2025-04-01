@@ -319,6 +319,314 @@
       intensity: 10
     }
   ];
+  const mediumHighIntensityQuestions: Question[] = [
+    {
+      content: "你曾经对某人有过性幻想但从未告诉过他/她吗？是谁？",
+      category: "性",
+      tags: ["幻想", "暗恋"],
+      intensity: 7
+    },
+    {
+      content: "你在性方面最大的遗憾是什么？",
+      category: "性",
+      tags: ["遗憾", "反思"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么公共场所差点被发现做爱？",
+      category: "性",
+      tags: ["公共场所", "冒险"],
+      intensity: 8
+    },
+    {
+      content: "你曾经对伴侣撒过什么谎来逃避性行为？",
+      category: "关系",
+      tags: ["谎言", "逃避"],
+      intensity: 6
+    },
+    {
+      content: "你最喜欢伴侣对你做的性行为是什么？详细描述",
+      category: "性",
+      tags: ["偏好", "快感"],
+      intensity: 7
+    },
+    {
+      content: "你曾经因为什么性幻想而自慰？最近一次是什么时候？",
+      category: "性",
+      tags: ["自慰", "幻想"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在约会中有过什么尴尬的性经历？",
+      category: "性",
+      tags: ["约会", "尴尬"],
+      intensity: 6
+    },
+    {
+      content: "如果可以和在座的人中交换伴侣一晚，你会选择谁？",
+      category: "关系",
+      tags: ["交换", "幻想"],
+      intensity: 8
+    },
+    {
+      content: "你曾经对性伴侣说过什么谎言来取悦对方？",
+      category: "性",
+      tags: ["谎言", "取悦"],
+      intensity: 6
+    },
+    {
+      content: "你最近一次看色情内容是什么时候？内容是什么？",
+      category: "性",
+      tags: ["色情", "消费"],
+      intensity: 6
+    },
+    {
+      content: "你曾经尝试过什么性玩具？哪个是你的最爱？",
+      category: "性",
+      tags: ["玩具", "体验"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么奇怪的地方留下过\"痕迹\"？",
+      category: "性",
+      tags: ["场所", "痕迹"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在性方面做过什么让自己感到惊讶的事情？",
+      category: "性",
+      tags: ["惊讶", "发现"],
+      intensity: 7
+    },
+    {
+      content: "你最想尝试但还没尝试过的性行为是什么？",
+      category: "性",
+      tags: ["愿望", "好奇"],
+      intensity: 7
+    },
+    {
+      content: "你曾经因为什么原因拒绝了伴侣的性要求？",
+      category: "关系",
+      tags: ["拒绝", "理由"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面让伴侣失望的事情是什么？",
+      category: "性",
+      tags: ["失望", "遗憾"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在什么不合适的场合想到性而分心？",
+      category: "性",
+      tags: ["分心", "场合"],
+      intensity: 6
+    },
+    {
+      content: "你曾经对什么类型的人产生过性吸引但不愿公开承认？",
+      category: "性",
+      tags: ["吸引", "秘密"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在性方面做过什么让伴侣特别开心的事情？",
+      category: "性",
+      tags: ["取悦", "技巧"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面有过什么尴尬的\"第一次\"经历？",
+      category: "性",
+      tags: ["第一次", "尴尬"],
+      intensity: 7
+    },
+    {
+      content: "你最疯狂的约会经历是什么？结果如何？",
+      category: "关系",
+      tags: ["约会", "疯狂"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么让自己后悔的决定？",
+      category: "性",
+      tags: ["决定", "后悔"],
+      intensity: 7
+    },
+    {
+      content: "你曾经因为什么原因假装对性感兴趣？",
+      category: "性",
+      tags: ["伪装", "动机"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在多长时间内和多少不同的人发生过关系？",
+      category: "性",
+      tags: ["数量", "时间"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么情况下被他人的某个特质意外地性唤起？",
+      category: "性",
+      tags: ["唤起", "特质"],
+      intensity: 6
+    },
+    {
+      content: "你曾经为了性而做过什么让自己感到羞耻的事情？",
+      category: "性",
+      tags: ["羞耻", "行为"],
+      intensity: 7
+    },
+    {
+      content: "你最享受的前戏是什么？为什么特别喜欢？",
+      category: "性",
+      tags: ["前戏", "偏好"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在什么情况下对不应该有感觉的人产生过性冲动？",
+      category: "性",
+      tags: ["冲动", "禁忌"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在性方面有过什么让你感到尴尬的身体反应？",
+      category: "性",
+      tags: ["身体", "尴尬"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么让伴侣惊讶的事情？反应如何？",
+      category: "性",
+      tags: ["惊喜", "反应"],
+      intensity: 7
+    },
+    {
+      content: "你曾经因为什么原因在性行为中途停止？",
+      category: "性",
+      tags: ["中断", "原因"],
+      intensity: 6
+    },
+    {
+      content: "你曾经对伴侣隐瞒过什么性方面的秘密？",
+      category: "关系",
+      tags: ["秘密", "隐瞒"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在性方面有过什么特别难忘的经历？为什么难忘？",
+      category: "性",
+      tags: ["难忘", "经历"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么情况下感到最性感或最有魅力？",
+      category: "性",
+      tags: ["自信", "魅力"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么冒险但值得的事情？",
+      category: "性",
+      tags: ["冒险", "价值"],
+      intensity: 7
+    },
+    {
+      content: "你曾经因为什么原因拒绝了一个你有好感的人？",
+      category: "关系",
+      tags: ["拒绝", "原因"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面有过什么特别疯狂的幻想？",
+      category: "性",
+      tags: ["幻想", "疯狂"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么情况下对性感到恐惧或焦虑？",
+      category: "性",
+      tags: ["恐惧", "焦虑"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么让自己感到特别满足的事情？",
+      category: "性",
+      tags: ["满足", "成就"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在什么情况下感觉自己被性方面的欲望控制？",
+      category: "性",
+      tags: ["欲望", "控制"],
+      intensity: 7
+    },
+    {
+      content: "你曾经对伴侣有过什么性方面的不满但没有直接表达？",
+      category: "关系",
+      tags: ["不满", "沟通"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么让伴侣感到不舒服的事情？",
+      category: "性",
+      tags: ["不适", "边界"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么情况下对性感到特别渴望？",
+      category: "性",
+      tags: ["渴望", "情境"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面有过什么误解导致的尴尬经历？",
+      category: "性",
+      tags: ["误解", "尴尬"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在什么情况下感到自己在性方面表现出色？",
+      category: "性",
+      tags: ["表现", "自信"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在性方面做过什么让自己感到特别兴奋的事情？",
+      category: "性",
+      tags: ["兴奋", "体验"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在什么情况下感觉自己被性方面的欲望拒绝？",
+      category: "性",
+      tags: ["拒绝", "挫折"],
+      intensity: 6
+    },
+    {
+      content: "你曾经对什么类型的性行为感到好奇但害怕尝试？",
+      category: "性",
+      tags: ["好奇", "恐惧"],
+      intensity: 7
+    },
+    {
+      content: "你曾经在性方面有过什么让你感到惊喜的发现？",
+      category: "性",
+      tags: ["发现", "惊喜"],
+      intensity: 6
+    },
+    {
+      content: "你曾经在什么情况下感觉自己在性方面特别有创意？",
+      category: "性",
+      tags: ["创意", "表现"],
+      intensity: 6
+    },
+    {
+      content: "你曾经为了取悦伴侣而做过什么自己不太喜欢的性行为？",
+      category: "性",
+      tags: ["取悦", "牺牲"],
+      intensity: 7
+    }
+  ];
   // 较为轻松适合破冰
   const lowIntensityQuestions: Question[] = [
     {
@@ -637,6 +945,7 @@
 
   const questions: Question[] = [
     ...lowIntensityQuestions,
+    ...mediumHighIntensityQuestions,
     ...highIntensityQuestions
   ];
 
@@ -776,6 +1085,7 @@
 				>
 					{filteredQuestions.length === 0 ? '没有符合条件的题目' : '抽取新题目'}
 				</Button>
+        <p class="text-xs text-gray-500 mt-2">总题库：{questions.length} 题，当前题库：{filteredQuestions.length} 题</p>
 			</div>
 		</Card>
 	</div>
