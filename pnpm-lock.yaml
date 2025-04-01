@@ -23,6 +23,9 @@ importers:
       html-to-image:
         specifier: ^1.11.11
         version: 1.11.13
+      lucide-svelte:
+        specifier: ^0.486.0
+        version: 0.486.0(svelte@4.2.19)
       mode-watcher:
         specifier: ^0.3.1
         version: 0.3.1(svelte@4.2.19)
@@ -1955,6 +1958,11 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lucide-svelte@0.486.0:
+    resolution: {integrity: sha512-NehCMb9tJ7XD8e0X85RtdcD4R7/z+2J93XTIsUvhwZB11hVhb9fXCSbnUCtTNifZj5d5ftkkCrmIPMP7DsdWyA==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
@@ -4438,6 +4446,10 @@ snapshots:
   lodash.merge@4.6.2: {}
 
   lru-cache@10.4.3: {}
+
+  lucide-svelte@0.486.0(svelte@4.2.19):
+    dependencies:
+      svelte: 4.2.19
 
   magic-string@0.25.9:
     dependencies:
