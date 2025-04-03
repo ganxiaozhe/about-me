@@ -164,6 +164,43 @@
 
 	<div class="grid gap-6 mb-8">
 		<Card class="p-6">
+			<div class="text-center">
+				<div class="min-h-[200px] md:px-16 flex items-center justify-center mb-6">
+					{#if currentQuestion}
+						<div
+							class="text-xl"
+							in:fly={{ y: 50, duration: 500, easing: quintOut }}
+							out:fly={{ y: -50, duration: 300 }}
+						>
+							{currentQuestion.content}
+						</div>
+					{:else if counter < 1}
+						<div out:fade={{duration: 300}} class="text-gray-500">点击下方按钮抽取题目</div>
+					{/if}
+				</div>
+
+				{#if currentQuestion}
+					<div class="flex gap-2 justify-center mb-6">
+						<Badge variant="secondary">{currentQuestion.category || '未分类'}</Badge>
+						{#each currentQuestion.tags || [] as tag}
+							<Badge variant="outline">{tag}</Badge>
+						{/each}
+						<Badge variant="destructive">刺激度 {currentQuestion.intensity}</Badge>
+					</div>
+				{/if}
+
+				<Button
+					size="lg"
+					on:click={drawNewQuestion}
+					disabled={filteredQuestions.length === 0}
+				>
+					{filteredQuestions.length === 0 ? '没有符合条件的题目' : '抽取新题目'}
+				</Button>
+        <p class="text-xs text-gray-500 mt-2">总题库：{questions.length} 题，当前题库：{filteredQuestions.length} 题</p>
+			</div>
+		</Card>
+		
+		<Card class="p-6">
 			<h2 class="text-xl font-semibold mb-4">筛选选项</h2>
 			<div class="grid gap-6">
 				<div class="grid gap-4">
@@ -322,43 +359,6 @@
 						/>
 					</div>
 				</div>
-			</div>
-		</Card>
-
-		<Card class="p-6">
-			<div class="text-center">
-				<div class="min-h-[200px] md:px-16 flex items-center justify-center mb-6">
-					{#if currentQuestion}
-						<div
-							class="text-xl"
-							in:fly={{ y: 50, duration: 500, easing: quintOut }}
-							out:fly={{ y: -50, duration: 300 }}
-						>
-							{currentQuestion.content}
-						</div>
-					{:else if counter < 1}
-						<div out:fade={{duration: 300}} class="text-gray-500">点击下方按钮抽取题目</div>
-					{/if}
-				</div>
-
-				{#if currentQuestion}
-					<div class="flex gap-2 justify-center mb-6">
-						<Badge variant="secondary">{currentQuestion.category || '未分类'}</Badge>
-						{#each currentQuestion.tags || [] as tag}
-							<Badge variant="outline">{tag}</Badge>
-						{/each}
-						<Badge variant="destructive">刺激度 {currentQuestion.intensity}</Badge>
-					</div>
-				{/if}
-
-				<Button
-					size="lg"
-					on:click={drawNewQuestion}
-					disabled={filteredQuestions.length === 0}
-				>
-					{filteredQuestions.length === 0 ? '没有符合条件的题目' : '抽取新题目'}
-				</Button>
-        <p class="text-xs text-gray-500 mt-2">总题库：{questions.length} 题，当前题库：{filteredQuestions.length} 题</p>
 			</div>
 		</Card>
 	</div>
