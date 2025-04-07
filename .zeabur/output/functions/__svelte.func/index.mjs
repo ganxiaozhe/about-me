@@ -1,1 +1,0 @@
-export { default } from "./.svelte-kit/zeabur/index.js";

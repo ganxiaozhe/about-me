@@ -167,7 +167,6 @@ export const ProjectListData:ProjectItem[] = [
     id: 'nonoerp',
     title: 'NONOERP: 电商 ERP 辅助软件',
     icon: '/icons/nonoerp.jpg',
-    url: 'https://nonoerp.com/',
     keywords: ['电商', '外包', '大前端', '爬虫', '自动化', 'Node.js', 'NW.js'],
     created_at: '2022-01-18',
     finished_at: '2022-02-13',
