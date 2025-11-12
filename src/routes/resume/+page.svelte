@@ -41,8 +41,8 @@
   const Profile:Profile = {
     fullname: '具诚人',
     fullname_en: 'JU Chengren',
-    nickname: '甘小蔗',
-    nickname_en: 'Sugarcane',
+    nickname: '小蔗',
+    nickname_en: 'Xiaozhe',
     gender: '男',
     birthdate: '2002-02-14',
     email: 'hi@gxzv.com',
@@ -212,7 +212,9 @@ left-1/2 -translate-x-1/2'>
       {/if}
     </div>
     <section class='p-profile'>
-      <h1 class='text-3xl font-bold'>{Profile.fullname_en}</h1>
+      <h1 class='text-3xl font-bold'>{
+        data.userealname ? Profile.fullname_en : Profile.nickname_en
+      }</h1>
       <div class='flex flex-wrap items-center gap-y-2 gap-3 mt-1'>
         <Badge type='gender'>
           {Math.floor((Date.now() - new Date(Profile.birthdate).getTime())/(1000*60*60*24*365))} 岁

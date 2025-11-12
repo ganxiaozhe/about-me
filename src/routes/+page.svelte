@@ -16,7 +16,7 @@ relative overflow-hidden dark:bg-black'>
   <div class='container mx-auto relative z-[1]'>
     <article class='py-32 sm:py-40 prose lg:prose-lg text-shadow text-inherit'>
       <h1 class='text-4xl font-semibold dark:text-white'>你好</h1>
-      <p>我的名字叫「 具诚人 」，在互联网上更为熟知的是「 甘小蔗 」。中国人，居住在「 山城 」重庆。我是一个独来独往的人，大部分时间会避免与社会产生联系。对知识「 贪得无厌 」，想知道世界万物如何运作。软件是我表达自己的媒介。</p>
+      <p>你可以叫我小蔗，在互联网上更为熟知的是「 甘小蔗 」。中国人，居住在「 山城 」重庆。是一个独来独往的人，大部分时间会避免与社会产生联系。对知识「 贪得无厌 」，想知道世界万物如何运作。软件是我表达自己的媒介。</p>
 
       <div class='not-prose flex mt-8'>
         <Tabs.Root value="home" 
