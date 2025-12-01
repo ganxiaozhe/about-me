@@ -70,7 +70,7 @@ flex items-center justify-center'>
       </div>
 
       <div class='flex items-center gap-3'>
-        <a href='https://ys.110t.cn/' target='_blank' class='hover:opacity-80'>数据来源</a>
+        <a href='https://pan.sharehub.club/' target='_blank' class='hover:opacity-80'>数据来源</a>
       </div>
     </div>
     {/if}
