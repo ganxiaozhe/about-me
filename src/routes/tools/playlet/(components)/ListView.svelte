@@ -13,22 +13,22 @@
       {#if title}
       {title}
       {:else}
-      🔍 {result.count} 条相关结果
+      🔍 {result.total_result} 条相关结果
       {/if}
     </h2>
 
-    {#if result.data.length<1}
+    {#if result.items.length<1}
     <div class='text-center space-y-2'>
       <div class='text-4xl'>:(</div>
       <div class='text-muted-foreground text-sm'>没有找到相关内容，尝试换个关键词 ？</div>
     </div>
     {/if}
     
-    {#each result.data as item}
+    {#each result.items as item}
     <div class='flex items-center gap-4'>
       <div class='grow'>
-        <h3 class='text-lg font-semibold line-clamp-2'>{item.name}</h3>
-        <p class='text-sm text-muted-foreground'>资源添加于 {item.addtime}</p>
+        <h3 class='text-lg font-semibold line-clamp-2'>{item.title}</h3>
+        <p class='text-sm text-muted-foreground'>资源添加于 {item.times}</p>
       </div>
       <div class='shrink-0'>
         <Button href={item.url} target='_blank'>网盘</Button>

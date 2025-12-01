@@ -32,7 +32,6 @@
 
     const json = await query(name);
     searchResult = json;
-    //searchList = json.data;
   }
 
   /**
@@ -44,7 +43,7 @@
     name && url.searchParams.append('name', name);
 
     const resp = await fetch(url);
-    return await resp.json();
+    return (await resp.json()).data;
   }
 </script>
 

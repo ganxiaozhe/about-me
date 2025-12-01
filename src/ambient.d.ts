@@ -1,17 +1,16 @@
 namespace Playlet {
   interface ApiModel {
-    addtime: string;
-    episodes: number;
     id: number;
-    name: string;
-    number: number;
+    source_category: number;
+    title: string;
     url: string;
+    name: string;
+    times: number;
   }
 
   interface ApiResult {
-    code:number;
-    count:number;
-    data:Playlet.ApiModel[]
+    total_result:number;
+    items:Playlet.ApiModel[]
   }
 }
 
